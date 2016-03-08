@@ -4,7 +4,7 @@ Project One: Musical Ear Training
 ===================
 
 
-This is my _very first_ in-class project using **HTML, CSS, and JavaScript**. My assignment is to build a game.
+This is my _very first_ in-class project using **HTML, CSS,  JavaScript, jQuery**, and possibly other technologies. My assignment is to build a game.
 
 ----------
 **Game Requirements**
@@ -65,7 +65,7 @@ JavaScript scoring might look conceptually like this:
 
 
 
-Documents
+Pseudo Code
 ------------
 
 At the moment, the project involves a .js file,  .html file,  and a ``readme.md``. Pretty simple. Let's see where things go. **Woo!**
