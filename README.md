@@ -65,7 +65,30 @@ JavaScript scoring might look conceptually like this:
 
 
 
+
 Pseudo Code
 ------------
 
-At the moment, the project involves a .js file,  .html file,  and a ``readme.md``. Pretty simple. Let's see where things go. **Woo!**
+- Set up the html structure, and type in permanent tag & content. This may include instructions, key, and a few images.
+
+- CSS: style the page to make it aesthetically pleasing and also match the theme of the game. Set proper sizes and arrange the UI to be clean and simple. A few items will be stylized later on as the JavaScript elements are written and changed, especially ones that will be appended as messages in the game change.
+
+- The keyboard might be styled divs. The different keys can have event listeners attached to them to produce a sound/pitch upon a click. I’d also like to have them be highlighted and labeled upon a hover. This may be possible using CSS.
+
+1. A number indicating which round it is will be displayed.
+	- this may be a variable that is added by one each round.
+	- .html() to change the display of the round
+2. The melody will be played to the user. Not sure if repeats will be allowed.
+	-This might be a button that causes a soundbite to be played.
+	- These notes might be one recorded file.
+	- Or, they might be organized as one file per note in the scale (about 8 notes/files).
+		- I could have them called in preset orders.
+		- perhaps stored in arrays or objects.
+3. The keyboard will play based off of event listeners.
+	- I will have to have a media folder that will host all the sound files
+4. I just realized that I don’t know if I want to build a full keyboard. Maybe just 8 Divs that will be labeled C D E F G A B C! :-D
+	- Will the keyboard directly input answers? If so, the click functions will push() values to an 		array.
+	- This array will have to be compared to another preset array.
+		i. comparison using if values?
+		ii. if x == x, then  score+=1, append score
+	-
