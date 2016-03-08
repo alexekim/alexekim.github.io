@@ -1,6 +1,6 @@
 $(document).ready(function(){
   console.log("the window is loaded")
-
+        // All keyboard sound functions here
         var cAudioElement = document.createElement('audio');
         cAudioElement.setAttribute('src', 'media/c.wav');
         //audioElement.load()
@@ -91,6 +91,48 @@ $(document).ready(function(){
             c1AudioElement.play();
         });
 
+userAnswer = [];
+  $("button").click(function(event){
+    event.preventDefault(); //prevents form from submitting to hypothetical server
+
+    var value   = $("firstAnswer").val();
+    var value2  = $("secondAnswer").val();
+    var value3  = $("thirdAnswer").val();
+
+    userAnswer.push(value)
+    userAnswer.push(value2)
+    userAnswer.push(value3)
+    console.log(userAnswer)
+  })
+
+//display score
+  var currentscore = 0;
+
+// correct answers
+  var round1melody = ["c", "e", "g"];
+  var round2melody = [1,3,7,5];
+  var round3melody = [5,3,8,6];
+  var round5melody = [1,8,7,3];
+
+var  input = [];
+
+// var checkanswer = function(){
+//   input.push(prompt("first note") );
+//   input.push(prompt("second note") );
+//   input.push(prompt("third note") );
+//   console.log("input is " + input);
+//   if(JSON.stringify(round1melody) == JSON.stringify(input)){
+//     console.log("yes!");
+//   }
+//   else {
+//     console.log("sorry no")
+//   }
+// }
+
+
+
+//display round 1 elements
+// audio player for melody
 
 
   // $(".jamSandwich").fadeIn(4000)
