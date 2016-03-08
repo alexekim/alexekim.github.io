@@ -91,4 +91,3 @@ Pseudo Code
 	- This array will have to be compared to another preset array.
 		i. comparison using if values?
 		ii. if x == x, then  score+=1, append score
-	-
