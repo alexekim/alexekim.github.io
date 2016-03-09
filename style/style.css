@@ -202,7 +202,28 @@ p{
   font-size: 20px;
 }
 
-.uhh{
+.sample{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+.sample2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+.sample3{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+.sample4{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+.sample5{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.result{
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
 }
