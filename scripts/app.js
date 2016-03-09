@@ -90,20 +90,43 @@ $(document).ready(function(){
         $('.c1').click(function() {
             c1AudioElement.play();
         });
+      });
 
-userAnswer = [];
+var round1melody = ["c", "e", "g"];
+var round2melody = [1,3,7,5];
+var round3melody = [5,3,8,6];
+var round5melody = [1,8,7,3];
+
+var userAnswer = [];
+
   $("button").click(function(event){
     event.preventDefault(); //prevents form from submitting to hypothetical server
 
-    var value   = $("firstAnswer").val();
-    var value2  = $("secondAnswer").val();
-    var value3  = $("thirdAnswer").val();
+    var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+    var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+    var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
 
-    userAnswer.push(value)
+    // var value2  = $("secondAnswer").val();
+    // var value3  = $("thirdAnswer").val();
+
+    userAnswer.push(value1)
     userAnswer.push(value2)
     userAnswer.push(value3)
-    console.log(userAnswer)
-  })
+    console.log("userAnswer is: " + userAnswer)
+
+    //compare user answer to answer key
+    if(JSON.stringify(round1melody) == JSON.stringify(userAnswer)){
+      console.log("yes!");
+      var score1 = $("<div id='asdf'>You got it!!</div>");
+      $("#asdf").append(score1);
+    }
+    else {
+      console.log("sorry no")
+    }
+
+
+  });
+//end of button click or round
 
 //display score
   var currentscore = 0;
@@ -143,4 +166,4 @@ var  input = [];
   //   'color': "rgb(80, 159, 10)",
   //   "padding": "1%",
   //   "textAlign": "center"
-  })
+  // })
