@@ -102,7 +102,10 @@ $(document).ready(function(){
         $('.c1').click(function() {
             c1AudioElement.play();
         });
-      });
+
+});
+// END OF DOC READY
+
 
 var round1melody = ["c", "e", "g"];
 var round2melody = ["g", "b", "c1"];
@@ -117,6 +120,38 @@ var round4Answer = [];
 var round5Answer = [];
 
 var score        = 0;
+
+var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
+  $("button[name='submitAnswer']").replaceWith("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").fadeIn();
+  console.log("old result hidden");
+  $(".result").fadeOut();
+  console.log("inputs cleared")
+  $("input").val('');
+  console.log("next round button faded out,")
+  $("#next").fadeOut();
+  console.log("change out sample playing button with new sample button")
+  $(".sample").replaceWith(melody2Btn);
+  var melodyTwo = document.createElement('audio');
+  melodyTwo.setAttribute('src', 'media/melody2.wav');
+  //audioElement.load()
+  $.get();
+  melodyTwo.addEventListener("load", function() {
+      melodyTwo.play();
+  }, true);
+  $(".sample2").click(function() {
+      melodyTwo.play();
+  });
+  // shake the new melody button to alert the user of a next round starting.
+  $(".sampleSpace").effect( "shake", {times:3}, 500 );
+
+})
+
+var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
+
+
+
+
+}
 
   $("button[name = 'submitAnswer']").click(function(event){
     event.preventDefault(); //prevents form from submitting to hypothetical server
@@ -140,7 +175,8 @@ var score        = 0;
       $(".result").html("That was correct!").css("color", "green").fadeIn();
       $(".scorediv").effect( "shake", {times:2}, 500 );
       //create next round button
-      var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
+      // var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
+
       $("body").append(buttonNext);
       console.log("next round button added")
       console.log("yes!");
@@ -155,54 +191,87 @@ var score        = 0;
       $(".result").html("Incorrect.").css("color", "red")
       $(".scorediv").effect( "shake", {times:3}, 500 );
       //create next round button
-      var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
+      // var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
       $("body").append(buttonNext);
       console.log("next round button added")
       console.log("sorry no")
     }
-
-    // next round button functionality
-    $("#next").click(function(event){
-      event.preventDefault();
-      // bring back the submit button
-      console.log("submit answer button show and enable")
-      $("button[name = 'submitAnswer']").fadeIn();
-      $("button[name = 'submitAnswer']").prop("disabled", false);
-      // hide the previous result. score will remain
-      console.log("old result hidden")
-      $(".result").fadeOut();
-      // clear out input fields
-      console.log("inputs cleared")
-      $("input").val('');
-      // hide the next button
-      // disable here?? check later
-      console.log("next round button faded out, not disabled")
-      $("#next").fadeOut();
-      // display the next round's melody button, this case, sample2
-      console.log("change out sample playing button with new sample button")
-      $(".sample").replaceWith("<button type='button' class='sample2'>Play Melody 2</button>")
-      var melodyTwo = document.createElement('audio');
-      melodyTwo.setAttribute('src', 'media/melody2.wav');
-      //audioElement.load()
-      $.get();
-      melodyTwo.addEventListener("load", function() {
-          melodyTwo.play();
-      }, true);
-      $(".sample2").click(function() {
-          melodyTwo.play();
-      });
-
-      // shake the new melody button to alert the user of a next round starting.
-      $(".sampleSpace").effect( "shake", {times:3}, 500 );
-
-      // <button type="submit" name="submitAnswer">Submit Answer</button>
-      // $("button[name = 'submitAnswer']").replaceWith("<button type='submit' name='submitAnswer2'>Submit Answer</button>")
-    })
-
-
-
-
   });
+
+  // // next round button functionality
+  // $("#next").click(function(event){
+  //   event.preventDefault();
+  //   // <button type="submit" name="submitAnswer">Submit Answer</button>
+  //   // replace the submit button with submitAnswer2 because it is tied with a new function
+  //   $("button[name='submitAnswer']").replaceWith("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").fadeIn();
+  //   // bring back the submit button
+  //   // console.log("submit answer button show and enable")
+  //   // $("button[name = 'submitAnswer']").fadeIn();
+  //   // $("button[name = 'submitAnswer']").prop("disabled", false);
+  //   // hide the previous result. score will remain
+  //   console.log("old result hidden")
+  //   $(".result").fadeOut();
+  //   // clear out input fields
+  //   console.log("inputs cleared")
+  //   $("input").val('');
+  //   // hide the next button
+  //   // disable here?? check later********************************
+  //   console.log("next round button faded out,")
+  //   $("#next").fadeOut();
+  //   // display the next round's melody button, this case, sample2
+  //   console.log("change out sample playing button with new sample button")
+  //   $(".sample").replaceWith(melody2Btn);
+  //   var melodyTwo = document.createElement('audio');
+  //   melodyTwo.setAttribute('src', 'media/melody2.wav');
+  //   //audioElement.load()
+  //   $.get();
+  //   melodyTwo.addEventListener("load", function() {
+  //       melodyTwo.play();
+  //   }, true);
+  //   $(".sample2").click(function() {
+  //       melodyTwo.play();
+  //   });
+  //
+  //   // shake the new melody button to alert the user of a next round starting.
+  //   $(".sampleSpace").effect( "shake", {times:3}, 500 );
+  // })
+
+
+  $(melody2Btn).click(function(event){
+    event.preventDefault();
+    var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+    var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+    var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+    round2Answer.push(value1)
+    round2Answer.push(value2)
+    round2Answer.push(value3)
+    console.log("round2Answer is: " + round2Answer)
+    if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
+      score += 1;
+      $(".scorediv").html("Score is: " + score);
+      $("button[name = 'submitAnswer2']").hide();
+      $("button[name = 'submitAnswer2']").prop("disabled", true);
+      console.log("Submit Answer 2 button hidden and disabled")
+      $(".result").html("That was correct!").css("color", "green").fadeIn();
+      $(".scorediv").effect( "shake", {times:2}, 500 );
+    }
+    else {
+      $(".scorediv").html("Score is: " + score);
+      $("button[name = 'submitAnswer2']").hide();
+      $("button[name = 'submitAnswer2']").prop("disabled", true);
+      console.log("Submit Answer 2 button hidden and disabled")
+      $(".result").html("That was correct!").css("color", "green").fadeIn();
+      $(".scorediv").effect( "shake", {times:2}, 500 );
+      console.log("nope!!@#!@#")
+    }
+  })
+
+
+
+
+
+
+
 //end of button click or round
 
 
