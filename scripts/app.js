@@ -1,6 +1,22 @@
 $(document).ready(function(){
   console.log("the window is loaded")
         // All keyboard sound functions here
+        var melodyOne = document.createElement('audio');
+        melodyOne.setAttribute('src', 'media/melodyone.wav');
+        //audioElement.load()
+        $.get();
+        melodyOne.addEventListener("load", function() {
+            melodyOne.play();
+        }, true);
+        $('DIV FOR PLAYING HERE').click(function() {
+            melodyOne.play();
+        });
+
+
+
+
+
+
         var cAudioElement = document.createElement('audio');
         cAudioElement.setAttribute('src', 'media/c.wav');
         //audioElement.load()
@@ -97,9 +113,10 @@ var round2melody = [1,3,7,5];
 var round3melody = [5,3,8,6];
 var round5melody = [1,8,7,3];
 
-var userAnswer = [];
+var round1Answer = [];
+var score     = 0;
 
-  $("button").click(function(event){
+  $("button[name = 'submitAnswer']").click(function(event){
     event.preventDefault(); //prevents form from submitting to hypothetical server
 
     var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
@@ -109,21 +126,28 @@ var userAnswer = [];
     // var value2  = $("secondAnswer").val();
     // var value3  = $("thirdAnswer").val();
 
-    userAnswer.push(value1)
-    userAnswer.push(value2)
-    userAnswer.push(value3)
-    console.log("userAnswer is: " + userAnswer)
+    round1Answer.push(value1)
+    round1Answer.push(value2)
+    round1Answer.push(value3)
+    console.log("round1Answer is: " + round1Answer)
 
     //compare user answer to answer key
-    if(JSON.stringify(round1melody) == JSON.stringify(userAnswer)){
+    if(JSON.stringify(round1melody) == JSON.stringify(round1Answer)){
+      score += 1;
+      $(".scorediv").html("score is: " + score);
+      $("button[name = 'submitAnswer']").hide();
+      var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
+      $("body").append(buttonNext);
       console.log("yes!");
-      var score1 = $("<div id='asdf'>You got it!!</div>");
-      $("#asdf").append(score1);
     }
     else {
       console.log("sorry no")
     }
 
+    // $("button[name = 'clear']").click(function(event){
+    //   event.preventDefault();
+    //
+    // }
 
   });
 //end of button click or round
