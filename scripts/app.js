@@ -123,9 +123,29 @@ var score        = 0;
 
 // melody 1 button is embedded in original HTML
 var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
-var melody3Btn = $("<button class='sample3'>Play Melody 3</button>")
-var melody4Btn = $("<button class='sample4'>Play Melody 4</button>")
-var melody5Btn = $("<button class='sample5'>Play Melody 5</button>")
+var melody3Btn = $("<button class='sample3'>Play Melody 3</button>");
+var melody4Btn = $("<button class='sample4'>Play Melody 4</button>");
+var melody5Btn = $("<button class='sample5'>Play Melody 5</button>");
+
+$(".sample").on("click", function(){
+  $(".sample").fadeOut();
+})
+
+$(melody2Btn).on("click", function(){
+  melody2Btn.fadeOut();
+})
+$(melody3Btn).on("click", function(){
+  melody3Btn.fadeOut();
+})
+$(melody4Btn).on("click", function(){
+  melody2Btn.fadeOut();
+})
+$(melody5Btn).on("click", function(){
+  melody5Btn.fadeOut();
+})
+$(melody2Btn).on("click", function(){
+  melody2Btn.fadeOut();
+})
 
 // submit answer 1 button is embedded in original HTML
 var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").on("click", function(){
@@ -282,7 +302,6 @@ var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!
   $("#next").fadeOut();
   console.log("change out sample playing button with new sample button")
   $(".sample").replaceWith(melody2Btn);
-
   var melodyTwo = document.createElement('audio');
   melodyTwo.setAttribute('src', 'media/melody2.wav');
   //audioElement.load()
@@ -296,6 +315,8 @@ var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!
   // shake the new melody button to alert the user of a next round starting.
   $(".sampleSpace").effect( "shake", {times:3}, 500 );
 })
+
+
 
 var nextTwoToThreeBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer2']").replaceWith(submitAnswer3).fadeIn();
