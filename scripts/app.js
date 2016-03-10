@@ -121,8 +121,175 @@ var round5Answer = [];
 
 var score        = 0;
 
-var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
-  $("button[name='submitAnswer']").replaceWith("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").fadeIn();
+
+// melody 1 button is embedded in original HTML
+var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
+var melody3Btn = $("<button class='sample3'>Play Melody 3</button>")
+var melody4Btn = $("<button class='sample4'>Play Melody 4</button>")
+var melody5Btn = $("<button class='sample5'>Play Melody 5</button>")
+
+
+var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").on("click", function(){
+  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+  round2Answer.push(value1)
+  round2Answer.push(value2)
+  round2Answer.push(value3)
+  console.log("round2Answer is: " + round2Answer)
+  $("button[name = 'submitAnswer2']").hide();
+  $("button[name = 'submitAnswer2']").prop("disabled", true);
+  console.log("Submit Answer button hidden and disabled");
+  if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
+    score += 1;
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer2']").hide();
+    $("button[name = 'submitAnswer2']").prop("disabled", true);
+    console.log("Submit Answer 2 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    $("body").append(nextTwoToThreeBtn);
+    console.log("next round button added")
+  }
+  else {
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer2']").hide();
+    $("button[name = 'submitAnswer2']").prop("disabled", true);
+    console.log("Submit Answer 2 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    console.log("nope!!@#!@#");
+    $("body").append(nextTwoToThreeBtn);
+    console.log("next round button added");
+  }
+})
+
+var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 3</button>").on("click", function(){
+  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+  round3Answer.push(value1)
+  round3Answer.push(value2)
+  round3Answer.push(value3)
+  console.log("round3Answer is: " + round3Answer)
+  $("button[name = 'submitAnswer3']").hide();
+  $("button[name = 'submitAnswer3']").prop("disabled", true);
+  console.log("Submit Answer button hidden and disabled");
+  if(JSON.stringify(round3melody) == JSON.stringify(round3Answer)){
+    score += 1;
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer3']").hide();
+    $("button[name = 'submitAnswer3']").prop("disabled", true);
+    console.log("Submit Answer 3 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    $("body").append(nextThreeToFourBtn);
+    console.log("next round button added")
+  }
+  else {
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer3']").hide();
+    $("button[name = 'submitAnswer3']").prop("disabled", true);
+    console.log("Submit Answer 3 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    console.log("nope!!@#!@#");
+    $("body").append(nextThreeToFourBtn);
+    console.log("next round button added");
+  }
+})
+
+
+var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 4</button>").on("click", function(){
+  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+  round4Answer.push(value1)
+  round4Answer.push(value2)
+  round4Answer.push(value3)
+  console.log("round4Answer is: " + round4Answer)
+  $("button[name = 'submitAnswer4']").hide();
+  $("button[name = 'submitAnswer4']").prop("disabled", true);
+  console.log("Submit Answer button hidden and disabled");
+  if(JSON.stringify(round4melody) == JSON.stringify(round4Answer)){
+    score += 1;
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer4']").hide();
+    $("button[name = 'submitAnswer4']").prop("disabled", true);
+    console.log("Submit Answer 4 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    $("body").append(nextFourToFiveBtn);
+    console.log("next round button added")
+  }
+  else {
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer4']").hide();
+    $("button[name = 'submitAnswer4']").prop("disabled", true);
+    console.log("Submit Answer 4 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    console.log("nope!!@#!@#");
+    $("body").append(nextFourToFiveBtn);
+    console.log("next round button added");
+  }
+})
+
+var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 5</button>").on("click", function(){
+  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+  round5Answer.push(value1)
+  round5Answer.push(value2)
+  round5Answer.push(value3)
+  console.log("round5Answer is: " + round5Answer)
+  $("button[name = 'submitAnswer5']").hide();
+  $("button[name = 'submitAnswer5']").prop("disabled", true);
+  console.log("Submit Answer button hidden and disabled");
+  if(JSON.stringify(round5melody) == JSON.stringify(round5Answer)){
+    score += 1;
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer5']").hide();
+    $("button[name = 'submitAnswer5']").prop("disabled", true);
+    console.log("Submit Answer 5 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+
+    var finalDiv = "<div>YOU DID IT!!!!!!! FUCK YEAHHH!!!!</div>"
+    $("body").append(finalDiv)
+    var finalScoreDiv = "<div>Final Score is :" + score +"</div>"
+    $("body").append(finalScoreDiv)
+    // $("body").append(nextFourToFiveBtn);
+    // console.log("next round button added")
+  }
+  else {
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer5']").hide();
+    $("button[name = 'submitAnswer5']").prop("disabled", true);
+    console.log("Submit Answer 5 button hidden and disabled")
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    console.log("nope!!@#!@#");
+
+    var finalDiv = "<div>YOU DID IT!!!!!!! FUCK YEAHHH!!!!</div>"
+    $("body").append(finalDiv)
+    var finalScoreDiv = "<div>Final Score is :" + score +"</div>"
+    $("body").append(finalScoreDiv)
+
+
+    // $("body").append(nextFourToFiveBtn);
+    // console.log("next round button added");
+  }
+})
+
+
+
+
+
+
+
+var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
+  $("button[name='submitAnswer']").replaceWith(submitAnswer2).fadeIn();
   console.log("old result hidden");
   $(".result").fadeOut();
   console.log("inputs cleared")
@@ -131,6 +298,7 @@ var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</but
   $("#next").fadeOut();
   console.log("change out sample playing button with new sample button")
   $(".sample").replaceWith(melody2Btn);
+
   var melodyTwo = document.createElement('audio');
   melodyTwo.setAttribute('src', 'media/melody2.wav');
   //audioElement.load()
@@ -143,15 +311,86 @@ var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</but
   });
   // shake the new melody button to alert the user of a next round starting.
   $(".sampleSpace").effect( "shake", {times:3}, 500 );
-
 })
 
-var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
+var nextTwoToThreeBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
+  $("button[name='submitAnswer2']").replaceWith(submitAnswer3).fadeIn();
+  console.log("old result hidden");
+  $(".result").fadeOut();
+  console.log("inputs cleared")
+  $("input").val('');
+  console.log("next round button faded out,")
+  $(nextTwoToThreeBtn).fadeOut();
+  console.log("change out sample playing button with new sample button")
+  $(melody2Btn).replaceWith(melody3Btn);
+  var melodyThree = document.createElement('audio');
+  melodyThree.setAttribute('src', 'media/melody3.wav');
+  //audioElement.load()
+  $.get();
+  melodyThree.addEventListener("load", function() {
+      melodyThree.play();
+  }, true);
+  $(".sample3").click(function() {
+      melodyThree.play();
+  });
+  // shake the new melody button to alert the user of a next round starting.
+  $(".sampleSpace").effect( "shake", {times:3}, 500 );
+})
+
+var nextThreeToFourBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
+  $("button[name='submitAnswer3']").replaceWith(submitAnswer4).fadeIn();
+  console.log("old result hidden");
+  $(".result").fadeOut();
+  console.log("inputs cleared")
+  $("input").val('');
+  console.log("next round button faded out,")
+  $(nextThreeToFourBtn).fadeOut();
+  console.log("change out sample playing button with new sample button")
+  $(melody3Btn).replaceWith(melody4Btn);
+  var melodyFour = document.createElement('audio');
+  melodyFour.setAttribute('src', 'media/melody4.wav');
+  //audioElement.load()
+  $.get();
+  melodyFour.addEventListener("load", function() {
+      melodyFour.play();
+  }, true);
+  $(".sample4").click(function() {
+      melodyFour.play();
+  });
+  // shake the new melody button to alert the user of a next round starting.
+  $(".sampleSpace").effect( "shake", {times:3}, 500 );
+})
+
+var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
+  $("button[name='submitAnswer4']").replaceWith(submitAnswer5).fadeIn();
+  console.log("old result hidden");
+  $(".result").fadeOut();
+  console.log("inputs cleared")
+  $("input").val('');
+  console.log("next round button faded out,")
+  $(nextFourToFiveBtn).fadeOut();
+  console.log("change out sample playing button with new sample button")
+  $(melody4Btn).replaceWith(melody5Btn);
+  var melodyFive = document.createElement('audio');
+  melodyFive.setAttribute('src', 'media/melody5.wav');
+  //audioElement.load()
+  $.get();
+  melodyFive.addEventListener("load", function() {
+      melodyFive.play();
+  }, true);
+  $(".sample5").click(function() {
+      melodyFive.play();
+  });
+  // shake the new melody button to alert the user of a next round starting.
+  $(".sampleSpace").effect( "shake", {times:3}, 500 );
+})
 
 
 
 
-}
+
+
+
 
   $("button[name = 'submitAnswer']").click(function(event){
     event.preventDefault(); //prevents form from submitting to hypothetical server
@@ -175,9 +414,9 @@ var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
       $(".result").html("That was correct!").css("color", "green").fadeIn();
       $(".scorediv").effect( "shake", {times:2}, 500 );
       //create next round button
-      // var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
+      // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
 
-      $("body").append(buttonNext);
+      $("body").append(nextOneToTwoBtn);
       console.log("next round button added")
       console.log("yes!");
     }
@@ -191,8 +430,8 @@ var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
       $(".result").html("Incorrect.").css("color", "red")
       $(".scorediv").effect( "shake", {times:3}, 500 );
       //create next round button
-      // var buttonNext = $("<button type='button' id='next' name='next'>Next Round!</button>")
-      $("body").append(buttonNext);
+      // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
+      $("body").append(nextOneToTwoBtn);
       console.log("next round button added")
       console.log("sorry no")
     }
@@ -237,34 +476,34 @@ var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
   // })
 
 
-  $(melody2Btn).click(function(event){
-    event.preventDefault();
-    var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-    var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-    var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-    round2Answer.push(value1)
-    round2Answer.push(value2)
-    round2Answer.push(value3)
-    console.log("round2Answer is: " + round2Answer)
-    if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
-      score += 1;
-      $(".scorediv").html("Score is: " + score);
-      $("button[name = 'submitAnswer2']").hide();
-      $("button[name = 'submitAnswer2']").prop("disabled", true);
-      console.log("Submit Answer 2 button hidden and disabled")
-      $(".result").html("That was correct!").css("color", "green").fadeIn();
-      $(".scorediv").effect( "shake", {times:2}, 500 );
-    }
-    else {
-      $(".scorediv").html("Score is: " + score);
-      $("button[name = 'submitAnswer2']").hide();
-      $("button[name = 'submitAnswer2']").prop("disabled", true);
-      console.log("Submit Answer 2 button hidden and disabled")
-      $(".result").html("That was correct!").css("color", "green").fadeIn();
-      $(".scorediv").effect( "shake", {times:2}, 500 );
-      console.log("nope!!@#!@#")
-    }
-  })
+  // $(melody2Btn).click(function(event){
+  //   event.preventDefault();
+  //   var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+  //   var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+  //   var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+  //   round2Answer.push(value1)
+  //   round2Answer.push(value2)
+  //   round2Answer.push(value3)
+  //   console.log("round2Answer is: " + round2Answer)
+  //   if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
+  //     score += 1;
+  //     $(".scorediv").html("Score is: " + score);
+  //     $("button[name = 'submitAnswer2']").hide();
+  //     $("button[name = 'submitAnswer2']").prop("disabled", true);
+  //     console.log("Submit Answer 2 button hidden and disabled")
+  //     $(".result").html("That was correct!").css("color", "green").fadeIn();
+  //     $(".scorediv").effect( "shake", {times:2}, 500 );
+  //   }
+  //   else {
+  //     $(".scorediv").html("Score is: " + score);
+  //     $("button[name = 'submitAnswer2']").hide();
+  //     $("button[name = 'submitAnswer2']").prop("disabled", true);
+  //     console.log("Submit Answer 2 button hidden and disabled")
+  //     $(".result").html("That was correct!").css("color", "green").fadeIn();
+  //     $(".scorediv").effect( "shake", {times:2}, 500 );
+  //     console.log("nope!!@#!@#")
+  //   }
+  // })
 
 
 
