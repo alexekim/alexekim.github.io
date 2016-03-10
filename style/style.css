@@ -256,6 +256,19 @@ article{
   font-size: 20px;
 }
 
+.endscore{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  color: white;
+}
+
+.thanks {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  color: white;
+
+}
+
 #next{
   background-color: rgb(59, 215, 40);
   color: rgb(247, 247, 247);

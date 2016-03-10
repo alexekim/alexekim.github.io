@@ -142,8 +142,6 @@ var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 
   if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer2']").hide();
-    $("button[name = 'submitAnswer2']").prop("disabled", true);
     console.log("Submit Answer 2 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
@@ -152,10 +150,8 @@ var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer2']").hide();
-    $("button[name = 'submitAnswer2']").prop("disabled", true);
     console.log("Submit Answer 2 button hidden and disabled")
-    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     console.log("nope!!@#!@#");
     $("body").append(nextTwoToThreeBtn);
@@ -177,8 +173,6 @@ var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 
   if(JSON.stringify(round3melody) == JSON.stringify(round3Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer3']").hide();
-    $("button[name = 'submitAnswer3']").prop("disabled", true);
     console.log("Submit Answer 3 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
@@ -187,10 +181,8 @@ var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer3']").hide();
-    $("button[name = 'submitAnswer3']").prop("disabled", true);
     console.log("Submit Answer 3 button hidden and disabled")
-    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     console.log("nope!!@#!@#");
     $("body").append(nextThreeToFourBtn);
@@ -213,8 +205,6 @@ var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 
   if(JSON.stringify(round4melody) == JSON.stringify(round4Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer4']").hide();
-    $("button[name = 'submitAnswer4']").prop("disabled", true);
     console.log("Submit Answer 4 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
@@ -223,10 +213,8 @@ var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer4']").hide();
-    $("button[name = 'submitAnswer4']").prop("disabled", true);
     console.log("Submit Answer 4 button hidden and disabled")
-    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     console.log("nope!!@#!@#");
     $("body").append(nextFourToFiveBtn);
@@ -245,35 +233,32 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
   $("button[name = 'submitAnswer5']").hide();
   $("button[name = 'submitAnswer5']").prop("disabled", true);
   console.log("Submit Answer button hidden and disabled");
-  if(JSON.stringify(round5melody) == JSON.stringify(round5Answer)){
+  var refreshBtn = $("<button type='button' value='Refresh Page' onClick='window.location.reload()'>Play Again!</button>")
+  $(".row-result").append(refreshBtn)
+    if(JSON.stringify(round5melody) == JSON.stringify(round5Answer)){
     score += 1;
-    $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer5']").hide();
-    $("button[name = 'submitAnswer5']").prop("disabled", true);
+      $(".scorediv").html("Score is: " + score);
     console.log("Submit Answer 5 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
-
-    var finalDiv = "<div>YOU DID IT!!!!!!! FUCK YEAHHH!!!!</div>"
-    $("body").append(finalDiv)
-    var finalScoreDiv = "<div>Final Score is :" + score +"</div>"
-    $("body").append(finalScoreDiv)
+    var finalDiv = "<div class='thanks'>Thank you for playing!</div>"
+    $(".result").append(finalDiv)
+    var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"</div>"
+    $(".result").append(finalScoreDiv)
     // $("body").append(nextFourToFiveBtn);
     // console.log("next round button added")
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer5']").hide();
-    $("button[name = 'submitAnswer5']").prop("disabled", true);
     console.log("Submit Answer 5 button hidden and disabled")
-    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     console.log("nope!!@#!@#");
 
-    var finalDiv = "<div>YOU DID IT!!!!!!! FUCK YEAHHH!!!!</div>"
-    $("body").append(finalDiv)
-    var finalScoreDiv = "<div>Final Score is :" + score +"</div>"
-    $("body").append(finalScoreDiv)
+    var finalDiv = "<div class='thanks'>Thank you for playing!</div>"
+    $(".result").append(finalDiv)
+    var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"</div>"
+    $(".result").append(finalScoreDiv)
 
 
     // $("body").append(nextFourToFiveBtn);
@@ -304,7 +289,7 @@ var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!
   $.get();
   melodyTwo.addEventListener("load", function() {
       melodyTwo.play();
-  }, true);
+      }, true);
   $(".sample2").click(function() {
       melodyTwo.play();
   });
@@ -328,7 +313,7 @@ var nextTwoToThreeBtn = $("<button type='button' id='next' name='next'>Next Roun
   $.get();
   melodyThree.addEventListener("load", function() {
       melodyThree.play();
-  }, true);
+      }, true);
   $(".sample3").click(function() {
       melodyThree.play();
   });
@@ -352,7 +337,7 @@ var nextThreeToFourBtn = $("<button type='button' id='next' name='next'>Next Rou
   $.get();
   melodyFour.addEventListener("load", function() {
       melodyFour.play();
-  }, true);
+      }, true);
   $(".sample4").click(function() {
       melodyFour.play();
   });
@@ -376,7 +361,7 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
   $.get();
   melodyFive.addEventListener("load", function() {
       melodyFive.play();
-  }, true);
+      }, true);
   $(".sample5").click(function() {
       melodyFive.play();
   });
