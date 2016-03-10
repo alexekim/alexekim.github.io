@@ -1,5 +1,5 @@
 body{
-  background-color: rgb(194, 194, 194)
+  background-color: white;
 }
 
 h1{
@@ -22,6 +22,7 @@ p{
 }
 
 /* piano key coloration and size  */
+/*rgb(251, 249, 240) this is a good ivory key color*/
 .c {
   position: relative;
   margin-left: -3px;
@@ -33,7 +34,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .d {
   position: relative;
@@ -46,7 +47,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .e {
   position: relative;
@@ -59,7 +60,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .f {
   position: relative;
@@ -72,7 +73,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .g {
   position: relative;
@@ -85,7 +86,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .a {
   position: relative;
@@ -98,7 +99,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .b {
   position: relative;
@@ -111,7 +112,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 .c1 {
   position: relative;
@@ -124,7 +125,7 @@ p{
   width: 50px;
   border: 3px solid black;
   border-radius: 10px;
-  background-color: rgb(255, 249, 222);
+  background-color: rgb(251, 249, 240);
 }
 
 
@@ -253,7 +254,7 @@ p{
 .col-12{
   float: left;
   width: 100%;
-  background-color: rgba(84, 136, 153,.5);
+  ba
   margin-top: 2%;
 }
 
@@ -267,21 +268,18 @@ p{
   float: left;
   width: 47%;
   margin-right: 2%;
-  background-color: rgba(103, 165, 187,.5);
   margin-top: 2%;
 }
 
 .col-6-right{
   float: right;
   width: 47%;
-  background-color: rgb(128, 193, 142);
   margin-top: 2%;
 }
 
 .col-4{
   float: left;
   width: 31%;
-  background-color: rgb(65, 195, 191);
   margin-top: 2%;
   margin-right: 3.5%;
 }
@@ -289,7 +287,6 @@ p{
 .col-4-right{
   float: right;
   width: 31%;
-  background-color: rgb(65, 195, 191);
   margin-top: 2%;
 }
 
