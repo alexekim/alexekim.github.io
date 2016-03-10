@@ -5,7 +5,6 @@ $(document).ready(function(){
 
 });
 // END OF DOC READY
-
 var melodyOne = document.createElement('audio');
 melodyOne.setAttribute('src', 'media/melody1.wav');
 //audioElement.load()
@@ -128,7 +127,7 @@ var melody3Btn = $("<button class='sample3'>Play Melody 3</button>")
 var melody4Btn = $("<button class='sample4'>Play Melody 4</button>")
 var melody5Btn = $("<button class='sample5'>Play Melody 5</button>")
 
-
+// submit answer 1 button is embedded in original HTML
 var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").on("click", function(){
   var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
   var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
@@ -437,12 +436,21 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
     }
   });
 
-  $(document).keydown(function(e){
-      if (e.keyCode == 65) {
-         cAudioElement.play()
-         $('.c').effect("highlight", {color:"red"}, 500);
 
-         return false;
+//prevents .keyCode method from interfering with the inputs!
+  $('input').keydown(function(e) {
+      e.stopPropagation();
+  });
+
+
+  $(document).keydown(function(e){
+      var target = (e.target) ? e.target : e.srcElement;
+      if(e.target.nodeName != "input"){
+        if (e.keyCode == 65) {
+           cAudioElement.play()
+           $('.c').effect("highlight", {color:"red"}, 500);
+           return false;
+      }
       }
   });
 
@@ -450,7 +458,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 83) {
          dAudioElement.play()
          $('.d').effect("highlight", {color:"orange"}, 500);
-
          return false;
       }
   });
@@ -458,7 +465,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 68) {
          eAudioElement.play()
          $('.e').effect("highlight", {color:"yellow"}, 500);
-
          return false;
       }
   });
@@ -466,7 +472,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 70) {
          fAudioElement.play()
          $('.f').effect("highlight", {color:"green"}, 500);
-
          return false;
       }
   });
@@ -474,7 +479,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 71) {
          gAudioElement.play()
          $('.g').effect("highlight", {color:"blue"}, 500);
-
          return false;
       }
   });
@@ -482,7 +486,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 72) {
          aAudioElement.play()
          $('.a').effect("highlight", {color:"purple"}, 500);
-
          return false;
       }
   });
@@ -490,7 +493,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 74) {
          bAudioElement.play()
          $('.b').effect("highlight", {color:"rgb(227, 0, 255)"}, 500);
-
          return false;
       }
   });
@@ -498,111 +500,6 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
       if (e.keyCode == 75) {
          c1AudioElement.play()
          $('.c1').effect("highlight", {color:"rgb(0, 255, 33)"}, 500);
-
          return false;
       }
   });
-
-
-
-
-//   $(function() {
-//    $(window).keypress(function(a) {
-//        var key = a.which;
-//        cAudioElement.play();
-//
-//    });
-// });
-
-  // // next round button functionality
-  // $("#next").click(function(event){
-  //   event.preventDefault();
-  //   // <button type="submit" name="submitAnswer">Submit Answer</button>
-  //   // replace the submit button with submitAnswer2 because it is tied with a new function
-  //   $("button[name='submitAnswer']").replaceWith("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").fadeIn();
-  //   // bring back the submit button
-  //   // console.log("submit answer button show and enable")
-  //   // $("button[name = 'submitAnswer']").fadeIn();
-  //   // $("button[name = 'submitAnswer']").prop("disabled", false);
-  //   // hide the previous result. score will remain
-  //   console.log("old result hidden")
-  //   $(".result").fadeOut();
-  //   // clear out input fields
-  //   console.log("inputs cleared")
-  //   $("input").val('');
-  //   // hide the next button
-  //   // disable here?? check later********************************
-  //   console.log("next round button faded out,")
-  //   $("#next").fadeOut();
-  //   // display the next round's melody button, this case, sample2
-  //   console.log("change out sample playing button with new sample button")
-  //   $(".sample").replaceWith(melody2Btn);
-  //   var melodyTwo = document.createElement('audio');
-  //   melodyTwo.setAttribute('src', 'media/melody2.wav');
-  //   //audioElement.load()
-  //   $.get();
-  //   melodyTwo.addEventListener("load", function() {
-  //       melodyTwo.play();
-  //   }, true);
-  //   $(".sample2").click(function() {
-  //       melodyTwo.play();
-  //   });
-  //
-  //   // shake the new melody button to alert the user of a next round starting.
-  //   $(".sampleSpace").effect( "shake", {times:3}, 500 );
-  // })
-
-
-  // $(melody2Btn).click(function(event){
-  //   event.preventDefault();
-  //   var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-  //   var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-  //   var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-  //   round2Answer.push(value1)
-  //   round2Answer.push(value2)
-  //   round2Answer.push(value3)
-  //   console.log("round2Answer is: " + round2Answer)
-  //   if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
-  //     score += 1;
-  //     $(".scorediv").html("Score is: " + score);
-  //     $("button[name = 'submitAnswer2']").hide();
-  //     $("button[name = 'submitAnswer2']").prop("disabled", true);
-  //     console.log("Submit Answer 2 button hidden and disabled")
-  //     $(".result").html("That was correct!").css("color", "green").fadeIn();
-  //     $(".scorediv").effect( "shake", {times:2}, 500 );
-  //   }
-  //   else {
-  //     $(".scorediv").html("Score is: " + score);
-  //     $("button[name = 'submitAnswer2']").hide();
-  //     $("button[name = 'submitAnswer2']").prop("disabled", true);
-  //     console.log("Submit Answer 2 button hidden and disabled")
-  //     $(".result").html("That was correct!").css("color", "green").fadeIn();
-  //     $(".scorediv").effect( "shake", {times:2}, 500 );
-  //     console.log("nope!!@#!@#")
-  //   }
-  // })
-
-
-
-
-
-
-
-//end of button click or round
-
-
-
-
-//display round 1 elements
-// audio player for melody
-
-
-  // $(".jamSandwich").fadeIn(4000)
-  //
-  // $(".example").css("backgroundColor", "rgb(89, 115, 65)")
-  //
-  // $(".example").css({
-  //   'color': "rgb(80, 159, 10)",
-  //   "padding": "1%",
-  //   "textAlign": "center"
-  // })

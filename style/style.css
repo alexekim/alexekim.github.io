@@ -1,14 +1,21 @@
 body{
-  background-color: white;
+  background-image: url("orch.jpeg");
+  background-size: cover;
+
+
 }
 
 h1{
   text-align: center;
-  font-family: 'Open Sans', sans-serif;}
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  color: white;
+}
 
 p{
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  color: white;
 }
 
 /*.row{
@@ -19,6 +26,25 @@ p{
 
 .row-piano{
   margin-top: 30px;
+  position: relative;
+  text-align: center;
+}
+
+article{
+  position: relative;
+  text-align: center;
+}
+
+.row-piano{
+  position: relative;
+}
+
+.input{
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-size: 20px;
+  margin: 20px 20px;
+
 }
 
 /* piano key coloration and size  */
@@ -201,6 +227,7 @@ p{
 .scorediv{
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
+  color: white;
 }
 
 .sample{
