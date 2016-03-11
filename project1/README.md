@@ -1,5 +1,4 @@
 # alexekim.github.io
-Welcome to Alex's Page!
 Project One: Musical Ear Training
 ===================
 
@@ -20,74 +19,114 @@ This is my _very first_ in-class project using **HTML, CSS,  JavaScript, jQuery*
 
  ![](https://cicsitecopy.wpengine.com/wp-content/uploads/2013/07/General-Assembly-logo.png)
 
-
-
+**How Requirements Were Met**
+ - Game is functional in browser!
+ - This is a one player game. In an aural skills course, you are not meant to compete against other students, it is more about individual development of learning scale structures.
+ - There are 5 rounds in the game, and you gain a point for every melody you transcribe correctly. Your score is a reflection of where you are in your listening abilities. This is a 'high-score' mentality type of game.
+ - HTML CSS JavaScript files separated and linked. Additional media folder stored music files
+ - KISS: Kept the game on one HTML page that does not require linkage to other pages. No time is wasted waiting for a new round to load. Buttons that appear will indicate progress, and issue new content on the page.
+ - KISS & DRY in code: Each "submit-answer" button has two, main tasks. The first is to evaluate the answer, and then second is to progress the game. Each "next" button presents a new melody and brings on the next submit-answer button that corresponds to the round. The JavaScript looks repetitive, but only because an event listener is assigned for each, round-specific button. More on this later.
+ - JS/jQuery is heavily used to apply and replace new elements, text, and audio features to the DOM. This prevents the player from having to load a new page each round.
+ - The game is available to the public at http://alexekim.github.io/project1/index.html
+ - The HTML tags that I chose are different enough to manage styling. It is heavily class-based for both styling and JavaScript, which made different sections of HTML easy to manipulate.
 
 
 The Game
 ------------
 Synopsis:
 
-Just like classical ear training, the game will present the user with a melody. The user must listen closely to the melody and decipher which notes were played. A keyboard, most likely built with **JavaScript**, will be available as either a tool to the user, or as the method of input.
+Just like classical ear training, the game presents the player with a melody. The player must listen closely to the melody and decipher which notes were played. A keyboard, built with **JavaScript**, is available as either a tool to the player using clicks or the homerow of the keyboard.
 
-At this stage, I would like a three note melody to be played, which will be paired with an ordered list, most likely in an ``array``. The inputted notes must match, and if they do, a points counter will track progress.
+A three note melody is played once via a button that disappears upon click. The player must playback the melody in their head, and is allowed to use the piano as a guide. In real life, a piano would not even be available, but the game is meant to be accessible to beginners as well as intermediate players.
+
+The player then selects which notes they think are correct. The submit-answer button will push the notes into an array which is compared to a different array containing the correct answers. The player is then informed if they were correct or incorrect. A correct answer will increase the score by one point. There are 5 rounds. The score is a reflection of where the player is in their listening abilities. This is a 'high-score' mentality type of game.
+
+The game ends after the final submission, and a new div will present the player with a final score and a reset button which reloads the page.
+
 
 Technologies
 ------------
 **HTML**
 
-There will most likely be permanent text on the document like the title, instructions, points, and sections for layout purposes. This might include pictures, and places for Javascript elements to be appended.
+There is permanent text on the document like the title, instructions, points element, and sections for layout purposes. This leaves a lot of room for JavaScript manipulation.
 
 **CSS**
 
-CSS will be important for laying out the interface of the game. The layout will be static for the most part. The only time I can think of it changing is after a round is completed, to give way to a presentation of points.
+CSS was important for laying out the interface of the game. The layout is static for the most part. The keyboard coloration was made using a CSS Hover feature, along with .effect() methods upon kepress events. Several new elements are appended to the DOM, which were styled using CSS. Additionally, there are a few grid system elements, but a few items stand outside of this. This was honestly due to a decision to work on the functionality of the game over styling/UI.
 
 **JavaScript and jQuery**
 
-The keyboard will most likely be heavily written in the .js file. Sound will be produced based off of clicks on the keyboard. Event listeners! I can also imagine the clicked key being highlighted with a color. Any changing elements, like score, will be coded in JavaScript.
+The keyboard is built using divs that are tied to jQuery event listeners. This includes mouse clicks and .keydown() methods.
 
-JavaScript scoring might look conceptually like this:
+Audio elements were defined as variables. The variables were tied to event listeners that would .play() upon click or keypress.
 
-``var score = 0``
+For example:
+``$('.c').click(function() {
+    cAudioElement.play();
+});``
+'.c' is a div class. when the div is clicked, play this element which is tied to a media file.
+
+The audio scripts were new to me. I understand them structurally, but do not completely understand the syntax, besides more obvious methods like ``.play()``. Thank you, StackOverflow.
+
+**Other unfamiliar scripts:**
+
+_Answer Input:_
+
+Initially, answers were typed into ``<input>`` sections on the webpage. A submit button would push those values into an array using ``toLowerCase()`` ``.val()`` and ``.push()`` methods. The user-created array was then compared to an answer key array in an ``if, else`` statement. This was `` if(round1Answer == round1melody)``
+
+However, this changed, when I decided a dropdown ``<select>`` element would be better to prevent user-error in an ``<input>`` box. I had to switch my array pushing into this:
+``  $('select').each(function(){
+    round1Answer.push($(this).val());
+  })
+`` which I also found on StackOverflow. I believe it pushes each 'select' item by ``.val()`` into a selected object, which was my empty array ``var round1Answer = [];``.
+
+_Keyboard interference:_
+
+When I first installed the keyboard/piano functionality, I was mighty-pleased. Until I realized I couldn't type into the input fields.
+
+``  $('input').keydown(function(e) {
+      e.stopPropagation();
+  });``
+
+  This was the solution. This means "when an input is selected, the .keydown() method will be cancelled out". However, using a ``<select>`` input later on may have made this unnecessary.
 
 
-``if(input == true) {
-    scoreDiv.html("correct!");
-    score += 1;
-  }``
 
 
 
+**DRY:**
+
+The button event listeners seem repetitive. This was how I managed to create new rounds without refreshing the page. New buttons would be tied to different, round-specific arrays and event-listeners.
+
+Each button removes items that were used for previous rounds. This usually meant that a button would remove itself, but produce a new button to progress the game.
+
+This makes me wonder if the same button could have been used for different rounds, and connect to different arrays. Instead, creating new buttons was my final solution.
+
+There are several ``console.log()`` progress checkers. This allowed me to keep track of the many, many functions that a button click would initiate. These would be removed in a final product, and replaced with comments.
+
+** User Stories **
+
+- I want a game that will give me audio feedback.
+- I want a game that will allow me to interact with a piano
+- I want to be able to listen to several different melodies and be tested on them
+- I want to be graded on my performance
 
 
+**Wish List:**
 
+My original vision had a C-Major Scale play automatically upon document load. Automatically, the key would be visually highlighted when played during this scale.
 
+Instead of the user being able to use the piano for reference, the user would have to use the piano as a method of input. Each click matters! If the "C" key was triggered, a "C", would be pushed into the array.
 
+This would make the game significantly more difficult, and similar to real-life experiences. However, this game can be used as a beginner-friendly version of aural skills, with the ability to check notes on the piano.
 
+I also would put several more levels, including 4, 5, 6-note melodies. I would add sheet music and different rhythm inputs.
 
+Finally, the game still looks really archaic. I wish I had done more to style the interface. There are divs and messages all over the place, and it is not responsive in the least.
 
-Pseudo Code
-------------
-
-- Set up the html structure, and type in permanent tag & content. This may include instructions, key, and a few images.
-
-- CSS: style the page to make it aesthetically pleasing and also match the theme of the game. Set proper sizes and arrange the UI to be clean and simple. A few items will be stylized later on as the JavaScript elements are written and changed, especially ones that will be appended as messages in the game change.
-
-- The keyboard might be styled divs. The different keys can have event listeners attached to them to produce a sound/pitch upon a click. I’d also like to have them be highlighted and labeled upon a hover. This may be possible using CSS.
-
-1. A number indicating which round it is will be displayed.
-	- this may be a variable that is added by one each round.
-	- .html() to change the display of the round
-2. The melody will be played to the user. Not sure if repeats will be allowed.
-	-This might be a button that causes a soundbite to be played.
-	- These notes might be one recorded file.
-	- Or, they might be organized as one file per note in the scale (about 8 notes/files).
-		- I could have them called in preset orders.
-		- perhaps stored in arrays or objects.
-3. The keyboard will play based off of event listeners.
-	- I will have to have a media folder that will host all the sound files
-4. I just realized that I don’t know if I want to build a full keyboard. Maybe just 8 Divs that will be labeled C D E F G A B C! :-D
-	- Will the keyboard directly input answers? If so, the click functions will push() values to an 		array.
-	- This array will have to be compared to another preset array.
-		i. comparison using if values?
-		ii. if x == x, then  score+=1, append score
+This came from a decision to concentrate on the functionality of the game. On day 3, Wednesday, I had a MVP. But I had time to either style it, or improve the gameplay. I went with gameplay. In this time, I succeeded in:
+- Changing inputs to dropdown select elements
+- Giving only one chance to listen to melodies
+- Cleaning up lots of repeated code in event listeners
+- Reordering the event listeners on the app.js file
+- Adding background image and restyling text

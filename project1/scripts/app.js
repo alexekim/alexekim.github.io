@@ -163,12 +163,13 @@ $(melody5Btn).on("click", function(){
 // SUBMIT ANSWER BUTTONS
 $("button[name = 'submitAnswer']").click(function(event){
   event.preventDefault(); //prevents form from submitting to hypothetical server
-  // var value1 = $(".firstAnswer");
-  // var value2 = $(".secondAnswer");
-  // var value3 = $(".thirdAnswer");
   $('select').each(function(){
     round1Answer.push($(this).val());
   })
+  // var value1 = $(".firstAnswer");
+  // var value2 = $(".secondAnswer");
+  // var value3 = $(".thirdAnswer");
+  //
   // var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
   // var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
   // var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
@@ -181,8 +182,7 @@ $("button[name = 'submitAnswer']").click(function(event){
   if(JSON.stringify(round1melody) == JSON.stringify(round1Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer']").hide();
-    $("button[name = 'submitAnswer']").prop("disabled", true);
+    $("button[name = 'submitAnswer']").prop("disabled", true).hide();
     console.log("Submit Answer button hidden and disabled")
     // inform user of result
     $(".result").html("That was correct!").css("color", "green").fadeIn();
@@ -196,10 +196,8 @@ $("button[name = 'submitAnswer']").click(function(event){
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    $("button[name = 'submitAnswer']").hide();
-    $("button[name = 'submitAnswer']").prop("disabled", true);
+    $("button[name = 'submitAnswer']").prop("disabled", true).hide();
     console.log("Submit Answer button hidden and disabled")
-
     // inform user of result
     $(".result").html("Incorrect.").css("color", "red")
     $(".scorediv").effect( "shake", {times:3}, 500 );
@@ -217,8 +215,7 @@ var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 
     round2Answer.push($(this).val());
   })
   console.log("round2Answer is: " + round2Answer)
-  $("button[name = 'submitAnswer2']").hide();
-  $("button[name = 'submitAnswer2']").prop("disabled", true);
+  $("button[name = 'submitAnswer2']").prop("disabled", true).hide();
   console.log("Submit Answer button hidden and disabled");
   if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
     score += 1;
@@ -245,8 +242,7 @@ var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 
     round3Answer.push($(this).val());
   })
   console.log("round3Answer is: " + round3Answer)
-  $("button[name = 'submitAnswer3']").hide();
-  $("button[name = 'submitAnswer3']").prop("disabled", true);
+  $("button[name = 'submitAnswer3']").prop("disabled", true).hide();
   console.log("Submit Answer button hidden and disabled");
   if(JSON.stringify(round3melody) == JSON.stringify(round3Answer)){
     score += 1;
@@ -274,8 +270,7 @@ var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 
     round4Answer.push($(this).val());
   })
   console.log("round4Answer is: " + round4Answer)
-  $("button[name = 'submitAnswer4']").hide();
-  $("button[name = 'submitAnswer4']").prop("disabled", true);
+  $("button[name = 'submitAnswer4']").prop("disabled", true).hide();
   console.log("Submit Answer button hidden and disabled");
   if(JSON.stringify(round4melody) == JSON.stringify(round4Answer)){
     score += 1;
@@ -304,8 +299,7 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
     round5Answer.push($(this).val());
   })
   console.log("round5Answer is: " + round5Answer)
-  $("button[name = 'submitAnswer5']").hide();
-  $("button[name = 'submitAnswer5']").prop("disabled", true);
+  $("button[name = 'submitAnswer5']").prop("disabled", true).hide();
   console.log("Submit Answer button hidden and disabled");
   var refreshBtn = $("<button type='button' value='Refresh Page' onClick='window.location.reload()'>Play Again!</button>")
   $(".row-result").append(refreshBtn)
