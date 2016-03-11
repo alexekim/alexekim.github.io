@@ -1,6 +1,8 @@
 body{
+  background: black;
   background-image: url("orch.jpeg");
   background-size: cover;
+  background-repeat: no-repeat;
 
 
 }
