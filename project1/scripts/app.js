@@ -1,8 +1,5 @@
 $(document).ready(function(){
   console.log("the window is loaded")
-        // All keyboard sound functions here
-
-
 });
 // END OF DOC READY
 
@@ -122,6 +119,7 @@ var round5Answer = [];
 
 var score        = 0;
 
+// HIDE AND SHOW INSTRUCTIONS ANIMATIONS
 // var show = "<p>Show Directions</p>"
 // var dir = "<p class='col-6 dir'>Listen to the melody, and input the corresponding notes. <br>The melody is played only once!<br> There will be 5 rounds. <br>Piano played with mouse or homerow.</p>"
 //
@@ -136,12 +134,14 @@ var score        = 0;
 // })
 
 
-// melody 1 button is embedded in original HTML
+// note: melody 1 button is embedded in original HTML
 var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
 var melody3Btn = $("<button class='sample3'>Play Melody 3</button>");
 var melody4Btn = $("<button class='sample4'>Play Melody 4</button>");
 var melody5Btn = $("<button class='sample5'>Play Melody 5</button>");
 
+
+// MELODY PLAYING BUTTONS
 $(".sample").on("click", function(){
   $(".sample").fadeOut();
 })
@@ -159,6 +159,57 @@ $(melody5Btn).on("click", function(){
   melody5Btn.fadeOut();
 })
 
+
+// SUBMIT ANSWER BUTTONS
+$("button[name = 'submitAnswer']").click(function(event){
+  event.preventDefault(); //prevents form from submitting to hypothetical server
+  // var value1 = $(".firstAnswer");
+  // var value2 = $(".secondAnswer");
+  // var value3 = $(".thirdAnswer");
+  $('select').each(function(){
+    round1Answer.push($(this).val());
+  })
+  // var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+  // var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+  // var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+  // round1Answer.push(value1)
+  // round1Answer.push(value2)
+  // round1Answer.push(value3)
+  console.log("round1Answer is: " + round1Answer)
+  //compare user answer to answer key
+  //compare round1Answer to round1melody
+  if(JSON.stringify(round1melody) == JSON.stringify(round1Answer)){
+    score += 1;
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer']").hide();
+    $("button[name = 'submitAnswer']").prop("disabled", true);
+    console.log("Submit Answer button hidden and disabled")
+    // inform user of result
+    $(".result").html("That was correct!").css("color", "green").fadeIn();
+    $(".scorediv").effect( "shake", {times:2}, 500 );
+    //create next round button
+    // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
+
+    $("body").append(nextOneToTwoBtn);
+    console.log("next round button added")
+    console.log("yes!");
+  }
+  else {
+    $(".scorediv").html("Score is: " + score);
+    $("button[name = 'submitAnswer']").hide();
+    $("button[name = 'submitAnswer']").prop("disabled", true);
+    console.log("Submit Answer button hidden and disabled")
+
+    // inform user of result
+    $(".result").html("Incorrect.").css("color", "red")
+    $(".scorediv").effect( "shake", {times:3}, 500 );
+    //create next round button
+    // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
+    $("body").append(nextOneToTwoBtn);
+    console.log("next round button added")
+    console.log("sorry no")
+  }
+});
 
 // submit answer 1 button is embedded in original HTML
 var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").on("click", function(){
@@ -246,6 +297,8 @@ var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 
   }
 })
 
+
+// THIS BUTTON ENDS GAME
 var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 5</button>").on("click", function(){
   $('select').each(function(){
     round5Answer.push($(this).val());
@@ -264,7 +317,7 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
     $(".scorediv").effect( "shake", {times:2}, 500 );
     var finalDiv = "<div class='thanks'>Thank you for playing!</div>"
     $(".result").append(finalDiv)
-    var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"</div>"
+    var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"/5</div>"
     $(".result").append(finalScoreDiv)
     // $("body").append(nextFourToFiveBtn);
     // console.log("next round button added")
@@ -275,10 +328,9 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
     $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     console.log("nope!!@#!@#");
-
     var finalDiv = "<div class='thanks'>Thank you for playing!</div>"
     $(".result").append(finalDiv)
-    var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"</div>"
+    var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"/5</div>"
     $(".result").append(finalScoreDiv)
 
 
@@ -291,7 +343,7 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
 
 
 
-
+// ROUND CHANGING BUTTONS:
 
 var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer']").replaceWith(submitAnswer2).fadeIn();
@@ -316,8 +368,6 @@ var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!
   // shake the new melody button to alert the user of a next round starting.
   $(".sampleSpace").effect( "shake", {times:3}, 500 );
 })
-
-
 
 var nextTwoToThreeBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer2']").replaceWith(submitAnswer3).fadeIn();
@@ -398,59 +448,9 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
 
 
 
-  $("button[name = 'submitAnswer']").click(function(event){
-    event.preventDefault(); //prevents form from submitting to hypothetical server
-    // var value1 = $(".firstAnswer");
-    // var value2 = $(".secondAnswer");
-    // var value3 = $(".thirdAnswer");
-
-    $('select').each(function(){
-      round1Answer.push($(this).val());
-    })
-
-    // var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-    // var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-    // var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-    // round1Answer.push(value1)
-    // round1Answer.push(value2)
-    // round1Answer.push(value3)
-    console.log("round1Answer is: " + round1Answer)
-    //compare user answer to answer key
-    //compare round1Answer to round1melody
-    if(JSON.stringify(round1melody) == JSON.stringify(round1Answer)){
-      score += 1;
-      $(".scorediv").html("Score is: " + score);
-      $("button[name = 'submitAnswer']").hide();
-      $("button[name = 'submitAnswer']").prop("disabled", true);
-      console.log("Submit Answer button hidden and disabled")
-      // inform user of result
-      $(".result").html("That was correct!").css("color", "green").fadeIn();
-      $(".scorediv").effect( "shake", {times:2}, 500 );
-      //create next round button
-      // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
-
-      $("body").append(nextOneToTwoBtn);
-      console.log("next round button added")
-      console.log("yes!");
-    }
-    else {
-      $(".scorediv").html("Score is: " + score);
-      $("button[name = 'submitAnswer']").hide();
-      $("button[name = 'submitAnswer']").prop("disabled", true);
-      console.log("Submit Answer button hidden and disabled")
-
-      // inform user of result
-      $(".result").html("Incorrect.").css("color", "red")
-      $(".scorediv").effect( "shake", {times:3}, 500 );
-      //create next round button
-      // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
-      $("body").append(nextOneToTwoBtn);
-      console.log("next round button added")
-      console.log("sorry no")
-    }
-  });
 
 
+// THIS IS THE HOMEROW-KEYBOARD/PIANO FUNCTIONALITY
 //prevents .keyCode method from interfering with the inputs!
   $('input').keydown(function(e) {
       e.stopPropagation();
