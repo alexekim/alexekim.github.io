@@ -5,6 +5,8 @@ $(document).ready(function(){
 
 });
 // END OF DOC READY
+
+
 var melodyOne = document.createElement('audio');
 melodyOne.setAttribute('src', 'media/melody1.wav');
 //audioElement.load()
@@ -120,6 +122,19 @@ var round5Answer = [];
 
 var score        = 0;
 
+// var show = "<p>Show Directions</p>"
+// var dir = "<p class='col-6 dir'>Listen to the melody, and input the corresponding notes. <br>The melody is played only once!<br> There will be 5 rounds. <br>Piano played with mouse or homerow.</p>"
+//
+// $(".dir").on("click", function(){
+//   $(".dir").fadeOut()
+//   $(".dir").replaceWith(show);
+// })
+//
+//   $(show).on("click", function(){
+//     $(show).fadeOut()
+//     $(show).replaceWith(dir);
+// })
+
 
 // melody 1 button is embedded in original HTML
 var melody2Btn = $("<button class='sample2'>Play Melody 2</button>");
@@ -138,23 +153,18 @@ $(melody3Btn).on("click", function(){
   melody3Btn.fadeOut();
 })
 $(melody4Btn).on("click", function(){
-  melody2Btn.fadeOut();
+  melody4Btn.fadeOut();
 })
 $(melody5Btn).on("click", function(){
   melody5Btn.fadeOut();
 })
-$(melody2Btn).on("click", function(){
-  melody2Btn.fadeOut();
-})
+
 
 // submit answer 1 button is embedded in original HTML
 var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 2</button>").on("click", function(){
-  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-  round2Answer.push(value1)
-  round2Answer.push(value2)
-  round2Answer.push(value3)
+  $('select').each(function(){
+    round2Answer.push($(this).val());
+  })
   console.log("round2Answer is: " + round2Answer)
   $("button[name = 'submitAnswer2']").hide();
   $("button[name = 'submitAnswer2']").prop("disabled", true);
@@ -180,12 +190,9 @@ var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 
 })
 
 var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 3</button>").on("click", function(){
-  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-  round3Answer.push(value1)
-  round3Answer.push(value2)
-  round3Answer.push(value3)
+  $('select').each(function(){
+    round3Answer.push($(this).val());
+  })
   console.log("round3Answer is: " + round3Answer)
   $("button[name = 'submitAnswer3']").hide();
   $("button[name = 'submitAnswer3']").prop("disabled", true);
@@ -212,12 +219,9 @@ var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 
 
 
 var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 4</button>").on("click", function(){
-  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-  round4Answer.push(value1)
-  round4Answer.push(value2)
-  round4Answer.push(value3)
+  $('select').each(function(){
+    round4Answer.push($(this).val());
+  })
   console.log("round4Answer is: " + round4Answer)
   $("button[name = 'submitAnswer4']").hide();
   $("button[name = 'submitAnswer4']").prop("disabled", true);
@@ -243,12 +247,9 @@ var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 
 })
 
 var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 5</button>").on("click", function(){
-  var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-  var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-  var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-  round5Answer.push(value1)
-  round5Answer.push(value2)
-  round5Answer.push(value3)
+  $('select').each(function(){
+    round5Answer.push($(this).val());
+  })
   console.log("round5Answer is: " + round5Answer)
   $("button[name = 'submitAnswer5']").hide();
   $("button[name = 'submitAnswer5']").prop("disabled", true);
@@ -399,13 +400,20 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
 
   $("button[name = 'submitAnswer']").click(function(event){
     event.preventDefault(); //prevents form from submitting to hypothetical server
+    // var value1 = $(".firstAnswer");
+    // var value2 = $(".secondAnswer");
+    // var value3 = $(".thirdAnswer");
 
-    var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
-    var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
-    var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
-    round1Answer.push(value1)
-    round1Answer.push(value2)
-    round1Answer.push(value3)
+    $('select').each(function(){
+      round1Answer.push($(this).val());
+    })
+
+    // var value1 = $("input[name = 'firstAnswer']").val().toLowerCase();
+    // var value2 = $("input[name = 'secondAnswer']").val().toLowerCase();
+    // var value3 = $("input[name = 'thirdAnswer']").val().toLowerCase();
+    // round1Answer.push(value1)
+    // round1Answer.push(value2)
+    // round1Answer.push(value3)
     console.log("round1Answer is: " + round1Answer)
     //compare user answer to answer key
     //compare round1Answer to round1melody

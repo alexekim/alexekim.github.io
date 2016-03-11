@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style/style.css">
     <title>Aural Practice</title>
@@ -14,7 +14,7 @@
       </article>
       <article class="row-hud">
         <p class="col-3 scorediv">Score is: 0 </p>
-        <p class="col-6">Listen to the melody, and input the corresponding notes. <br>The melody is played only once!<br> There will be 5 rounds.</p>
+        <p class="col-6 dir">Listen to the melody, and input the corresponding notes. <br>The melody is played only once!<br> There will be 5 rounds. <br>Piano played with mouse or homerow.</p>
         <p class="col-3 sampleSpace"><button type="button" class="sample">Play Melody 1</button></p>
       </article>
 
@@ -32,9 +32,44 @@
 
     <article class="input col-12">
       Input answers here:
-        <input type="text" name="firstAnswer" placeholder="First Note">
+
+        <select name="firstAnswer" class="firstAnswer" placeholder="First Note">
+          <option value="1">--First Note--</option>
+          <option value="c">c</option>
+          <option value="d">d</option>
+          <option value="e">e</option>
+          <option value="f">f</option>
+          <option value="g">g</option>
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c1">c1</option>
+        </select>
+        <select class="secondAnswer" name="secondAnswer">
+          <option value="2">--Second Note--</option>
+          <option value="c">c</option>
+          <option value="d">d</option>
+          <option value="e">e</option>
+          <option value="f">f</option>
+          <option value="g">g</option>
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c1">c1</option>
+        </select>
+        <select class="thirdAnswer" name="thirdAnswer" placeholder="First Note">
+          <option value="2">--Third Note--</option>
+          <option value="c">c</option>
+          <option value="d">d</option>
+          <option value="e">e</option>
+          <option value="f">f</option>
+          <option value="g">g</option>
+          <option value="a">a</option>
+          <option value="b">b</option>
+          <option value="c1">c1</option>
+        </select>
+
+        <!-- <input type="text" name="firstAnswer" placeholder="First Note">
         <input type="text" name="secondAnswer" placeholder="Second Note">
-        <input type="text" name="thirdAnswer" placeholder="Third Note">
+        <input type="text" name="thirdAnswer" placeholder="Third Note"> -->
         <button type="button" name="submitAnswer">Submit Answer</button>
     </article>
 
