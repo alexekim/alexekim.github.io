@@ -176,14 +176,14 @@ $("button[name = 'submitAnswer']").click(function(event){
   // round1Answer.push(value1)
   // round1Answer.push(value2)
   // round1Answer.push(value3)
-  console.log("round1Answer is: " + round1Answer)
-  //compare user answer to answer key
-  //compare round1Answer to round1melody
+  // console.log("round1Answer is: " + round1Answer)
+  // compare user answer to answer key
+  // compare round1Answer to round1melody
   if(JSON.stringify(round1melody) == JSON.stringify(round1Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
     $("button[name = 'submitAnswer']").prop("disabled", true).hide();
-    console.log("Submit Answer button hidden and disabled")
+    // console.log("Submit Answer button hidden and disabled")
     // inform user of result
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
@@ -191,21 +191,21 @@ $("button[name = 'submitAnswer']").click(function(event){
     // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
 
     $("body").append(nextOneToTwoBtn);
-    console.log("next round button added")
-    console.log("yes!");
+    // console.log("next round button added")
+    // console.log("yes!");
   }
   else {
     $(".scorediv").html("Score is: " + score);
     $("button[name = 'submitAnswer']").prop("disabled", true).hide();
-    console.log("Submit Answer button hidden and disabled")
+    // console.log("Submit Answer button hidden and disabled")
     // inform user of result
     $(".result").html("Incorrect.").css("color", "red")
     $(".scorediv").effect( "shake", {times:3}, 500 );
     //create next round button
     // var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>")
     $("body").append(nextOneToTwoBtn);
-    console.log("next round button added")
-    console.log("sorry no")
+    // console.log("next round button added")
+    // console.log("sorry no")
   }
 });
 
@@ -214,26 +214,26 @@ var submitAnswer2 = $("<button type='submit' name='submitAnswer2'>Submit Answer 
   $('select').each(function(){
     round2Answer.push($(this).val());
   })
-  console.log("round2Answer is: " + round2Answer)
+  // console.log("round2Answer is: " + round2Answer)
   $("button[name = 'submitAnswer2']").prop("disabled", true).hide();
-  console.log("Submit Answer button hidden and disabled");
+  // console.log("Submit Answer button hidden and disabled");
   if(JSON.stringify(round2melody) == JSON.stringify(round2Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 2 button hidden and disabled")
+    // console.log("Submit Answer 2 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     $("body").append(nextTwoToThreeBtn);
-    console.log("next round button added")
+    // console.log("next round button added")
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 2 button hidden and disabled")
+    // console.log("Submit Answer 2 button hidden and disabled")
     $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
-    console.log("nope!!@#!@#");
+    // console.log("nope!!@#!@#");
     $("body").append(nextTwoToThreeBtn);
-    console.log("next round button added");
+    // console.log("next round button added");
   }
 })
 
@@ -241,26 +241,26 @@ var submitAnswer3 = $("<button type='submit' name='submitAnswer3'>Submit Answer 
   $('select').each(function(){
     round3Answer.push($(this).val());
   })
-  console.log("round3Answer is: " + round3Answer)
+  // console.log("round3Answer is: " + round3Answer)
   $("button[name = 'submitAnswer3']").prop("disabled", true).hide();
-  console.log("Submit Answer button hidden and disabled");
+  // console.log("Submit Answer button hidden and disabled");
   if(JSON.stringify(round3melody) == JSON.stringify(round3Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 3 button hidden and disabled")
+    // console.log("Submit Answer 3 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     $("body").append(nextThreeToFourBtn);
-    console.log("next round button added")
+    // console.log("next round button added")
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 3 button hidden and disabled")
+    // console.log("Submit Answer 3 button hidden and disabled")
     $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
-    console.log("nope!!@#!@#");
+    // console.log("nope!!@#!@#");
     $("body").append(nextThreeToFourBtn);
-    console.log("next round button added");
+    // console.log("next round button added");
   }
 })
 
@@ -269,24 +269,24 @@ var submitAnswer4 = $("<button type='submit' name='submitAnswer4'>Submit Answer 
   $('select').each(function(){
     round4Answer.push($(this).val());
   })
-  console.log("round4Answer is: " + round4Answer)
+  // console.log("round4Answer is: " + round4Answer)
   $("button[name = 'submitAnswer4']").prop("disabled", true).hide();
-  console.log("Submit Answer button hidden and disabled");
+  // console.log("Submit Answer button hidden and disabled");
   if(JSON.stringify(round4melody) == JSON.stringify(round4Answer)){
     score += 1;
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 4 button hidden and disabled")
+    // console.log("Submit Answer 4 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     $("body").append(nextFourToFiveBtn);
-    console.log("next round button added")
+    // console.log("next round button added")
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 4 button hidden and disabled")
+    // console.log("Submit Answer 4 button hidden and disabled")
     $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
-    console.log("nope!!@#!@#");
+    // console.log("nope!!@#!@#");
     $("body").append(nextFourToFiveBtn);
     console.log("next round button added");
   }
@@ -298,15 +298,15 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
   $('select').each(function(){
     round5Answer.push($(this).val());
   })
-  console.log("round5Answer is: " + round5Answer)
+  // console.log("round5Answer is: " + round5Answer)
   $("button[name = 'submitAnswer5']").prop("disabled", true).hide();
-  console.log("Submit Answer button hidden and disabled");
+  // console.log("Submit Answer button hidden and disabled");
   var refreshBtn = $("<button type='button' value='Refresh Page' onClick='window.location.reload()'>Play Again!</button>")
   $(".row-result").append(refreshBtn)
     if(JSON.stringify(round5melody) == JSON.stringify(round5Answer)){
     score += 1;
       $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 5 button hidden and disabled")
+    // console.log("Submit Answer 5 button hidden and disabled")
     $(".result").html("That was correct!").css("color", "green").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
     var finalDiv = "<div class='thanks'>Thank you for playing!</div>"
@@ -318,10 +318,10 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
   }
   else {
     $(".scorediv").html("Score is: " + score);
-    console.log("Submit Answer 5 button hidden and disabled")
+    // console.log("Submit Answer 5 button hidden and disabled")
     $(".result").html("Incorrect").css("color", "red").fadeIn();
     $(".scorediv").effect( "shake", {times:2}, 500 );
-    console.log("nope!!@#!@#");
+    // console.log("nope!!@#!@#");
     var finalDiv = "<div class='thanks'>Thank you for playing!</div>"
     $(".result").append(finalDiv)
     var finalScoreDiv = "<div class='endscore'>Final Score is : " + score +"/5</div>"
@@ -333,21 +333,16 @@ var submitAnswer5 = $("<button type='submit' name='submitAnswer5'>Submit Answer 
   }
 })
 
-
-
-
-
 // ROUND CHANGING BUTTONS:
-
 var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer']").replaceWith(submitAnswer2).fadeIn();
-  console.log("old result hidden");
+  // console.log("old result hidden");
   $(".result").fadeOut();
-  console.log("inputs cleared")
+  // console.log("inputs cleared")
   $("input").val('');
-  console.log("next round button faded out,")
+  // console.log("next round button faded out,")
   $("#next").fadeOut();
-  console.log("change out sample playing button with new sample button")
+  // console.log("change out sample playing button with new sample button")
   $(".sample").replaceWith(melody2Btn);
   var melodyTwo = document.createElement('audio');
   melodyTwo.setAttribute('src', 'media/melody2.wav');
@@ -365,13 +360,13 @@ var nextOneToTwoBtn = $("<button type='button' id='next' name='next'>Next Round!
 
 var nextTwoToThreeBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer2']").replaceWith(submitAnswer3).fadeIn();
-  console.log("old result hidden");
+  // console.log("old result hidden");
   $(".result").fadeOut();
-  console.log("inputs cleared")
+  // console.log("inputs cleared")
   $("input").val('');
-  console.log("next round button faded out,")
+  // console.log("next round button faded out,")
   $(nextTwoToThreeBtn).fadeOut();
-  console.log("change out sample playing button with new sample button")
+  // console.log("change out sample playing button with new sample button")
   $(melody2Btn).replaceWith(melody3Btn);
   var melodyThree = document.createElement('audio');
   melodyThree.setAttribute('src', 'media/melody3.wav');
@@ -389,13 +384,13 @@ var nextTwoToThreeBtn = $("<button type='button' id='next' name='next'>Next Roun
 
 var nextThreeToFourBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer3']").replaceWith(submitAnswer4).fadeIn();
-  console.log("old result hidden");
+  // console.log("old result hidden");
   $(".result").fadeOut();
-  console.log("inputs cleared")
+  // console.log("inputs cleared")
   $("input").val('');
-  console.log("next round button faded out,")
+  // console.log("next round button faded out,")
   $(nextThreeToFourBtn).fadeOut();
-  console.log("change out sample playing button with new sample button")
+  // console.log("change out sample playing button with new sample button")
   $(melody3Btn).replaceWith(melody4Btn);
   var melodyFour = document.createElement('audio');
   melodyFour.setAttribute('src', 'media/melody4.wav');
@@ -413,13 +408,13 @@ var nextThreeToFourBtn = $("<button type='button' id='next' name='next'>Next Rou
 
 var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Round!</button>").on('click', function(){
   $("button[name='submitAnswer4']").replaceWith(submitAnswer5).fadeIn();
-  console.log("old result hidden");
+  // console.log("old result hidden");
   $(".result").fadeOut();
-  console.log("inputs cleared")
+  // console.log("inputs cleared")
   $("input").val('');
-  console.log("next round button faded out,")
+  // console.log("next round button faded out,")
   $(nextFourToFiveBtn).fadeOut();
-  console.log("change out sample playing button with new sample button")
+  // console.log("change out sample playing button with new sample button")
   $(melody4Btn).replaceWith(melody5Btn);
   var melodyFive = document.createElement('audio');
   melodyFive.setAttribute('src', 'media/melody5.wav');
@@ -437,28 +432,17 @@ var nextFourToFiveBtn = $("<button type='button' id='next' name='next'>Next Roun
 
 
 
-
-
-
-
-
-
-
 // THIS IS THE HOMEROW-KEYBOARD/PIANO FUNCTIONALITY
 //prevents .keyCode method from interfering with the inputs!
   $('input').keydown(function(e) {
       e.stopPropagation();
   });
 
-
   $(document).keydown(function(e){
-      var target = (e.target) ? e.target : e.srcElement;
-      if(e.target.nodeName != "input"){
         if (e.keyCode == 65) {
            cAudioElement.play()
            $('.c').effect("highlight", {color:"red"}, 500);
            return false;
-      }
       }
   });
 
