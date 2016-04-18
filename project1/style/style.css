@@ -1,16 +1,17 @@
 body{
   background: black;
-  background-image: url("orch.jpeg");
+  background: url("orch.jpeg") no-repeat center center fixed;;
   background-size: cover;
-  background-repeat: no-repeat;
-
-
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 h1{
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  color: white;
+  text-align: left;
+  font-family: 'Libre Baskerville', serif;  color: white;
+  font-size: 36px;
   color: white;
 }
 
@@ -32,6 +33,8 @@ p{
 
 .row-piano{
   margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   text-align: center;
 }
@@ -305,7 +308,6 @@ article{
 .col-12{
   float: left;
   width: 100%;
-  ba
   margin-top: 2%;
 }
 
