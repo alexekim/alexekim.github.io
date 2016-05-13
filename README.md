@@ -1,2 +1,0 @@
-# portfolio
-alex kim portfolio
