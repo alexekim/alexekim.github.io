@@ -82,6 +82,145 @@ article{
   text-align: center;
 }
 
+/* START MEDIA QUERY*/
+@media (max-width: 375px) {
+  h1{
+    text-align: left;
+    font-family: 'Libre Baskerville', serif;  color: white;
+    font-size: 30px;
+    color: white;
+  }
+
+  .row-piano {
+    margin-top: 30px;
+    margin-left: -10%;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*position: relative;*/
+    text-align: center;
+  }
+  .c {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .d {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .e {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .f {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .g {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .a {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .b {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+  .c1 {
+    /*position: relative;*/
+    margin-left: -3px;
+    font-family: 'Crimson Text', serif;
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    height: 200px;
+    width: 38px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: rgb(251, 249, 240);
+  }
+
+}
+/* END MEDIA QUERY*/
+
+/* START MEDIA QUERY*/
+@media (max-width: 768px) {
+  .row-piano {
+    margin-top: 30px;
+    margin-left: 10%;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*position: relative;*/
+    text-align: center;
+  }
+}
+/* END MEDIA QUERY*/
+
+
 .keys{
   display: inline-block;
   margin-left: auto;
