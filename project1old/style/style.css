@@ -1,38 +1,16 @@
 body{
-  background-color: black;
-  /*background: url("orch.jpeg") no-repeat center center fixed;
+  background: black;
+  background: url("orch.jpeg") no-repeat center center fixed;
   background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;*/
-}
-
-#bg {
-  z-index: -1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /*background: url(../media/orch.jpeg) no-repeat center center fixed;*/
-  background: url('https://images.unsplash.com/photo-1452724931113-5ab6340ce080?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=dd0467c4c4a51979de460f890470366c') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  /* Preserve aspect ratio */
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
 }
 
 h1{
   text-align: left;
   font-family: 'Libre Baskerville', serif;  color: white;
-  font-size: 42px;
+  font-size: 36px;
   color: white;
 }
 
@@ -52,7 +30,13 @@ p{
   background-color: rgba(64, 66, 55, 0.37);
 }
 
-
+.row-piano{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+}
 
 .dir{
   background-color: rgba(64, 66, 55, 0.47);
@@ -63,6 +47,9 @@ article{
   text-align: center;
 }
 
+.row-piano{
+  position: relative;
+}
 
 .input{
   font-family: 'Open Sans', sans-serif;
@@ -73,27 +60,10 @@ article{
 
 }
 
-.row-piano{
-  margin-top: 30px;
-  margin-left: 25%;
-  /*margin-left: auto;*/
-  /*margin-right: auto;*/
-  /*position: relative;*/
-  text-align: center;
-}
-
-.keys{
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-
-
 /* piano key coloration and size  */
 /*rgb(251, 249, 240) this is a good ivory key color*/
 .c {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -106,7 +76,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .d {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -119,7 +89,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .e {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -132,7 +102,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .f {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -145,7 +115,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .g {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -158,7 +128,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .a {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -171,7 +141,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .b {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -184,7 +154,7 @@ article{
   background-color: rgb(251, 249, 240);
 }
 .c1 {
-  /*position: relative;*/
+  position: relative;
   margin-left: -3px;
   font-family: 'Crimson Text', serif;
   font-size: 30px;
@@ -275,27 +245,22 @@ article{
 
 .sample{
   font-family: 'Open Sans', sans-serif;
-  color: black;
   font-size: 18px;
 }
 .sample2{
   font-family: 'Open Sans', sans-serif;
-  color: black;
   font-size: 18px;
 }
 .sample3{
   font-family: 'Open Sans', sans-serif;
-  color: black;
   font-size: 18px;
 }
 .sample4{
   font-family: 'Open Sans', sans-serif;
-  color: black;
   font-size: 18px;
 }
 .sample5{
   font-family: 'Open Sans', sans-serif;
-  color: black;
   font-size: 18px;
 }
 
@@ -305,15 +270,12 @@ article{
 }
 
 .endscore{
-  background-color: rgba(82, 82, 82, 0.62);
-
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   color: white;
 }
 
 .thanks {
-  background-color: rgba(82, 82, 82, 0.62);
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   color: white;
@@ -321,9 +283,6 @@ article{
 }
 
 #next{
-  display: block;
-  text-align: center;
-  margin: 0 auto;
   background-color: rgb(59, 215, 40);
   color: rgb(247, 247, 247);
   font-size: 20px;
@@ -335,7 +294,7 @@ article{
 
 
 /* GRID elements here */
-/*.container{
+.container{
   width: 600px;
   margin: 0 auto 0px auto;
   padding: 0 20px;
@@ -387,4 +346,4 @@ article{
   float:left;
   width: 23.5%;
   margin-left: 1%;
-}*/
+}
