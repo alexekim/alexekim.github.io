@@ -1,6 +1,6 @@
 # alexekim.github.io
 Project One: Musical Ear Training
-[Playable here](alexekim.github.io/project1)
+[Playable here](http://alexekim.github.io/project1)
 ===================
 
 
