@@ -5,5 +5,6 @@ $(document).ready(function() {
 });
 
 $("#firstPageDownArrow").on("click", function(){
+  console.log("arrow clicked");
   window.scrollBy(0,300);
 });
