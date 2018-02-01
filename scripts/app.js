@@ -6,5 +6,6 @@ $(document).ready(function() {
 
 $("#firstPageDownArrow").on("click", function(){
   console.log("arrow clicked");
-  window.scrollBy(0,300);
+  // window.scrollBy(0,300);
+  $('html, body').animate({ scrollTop: 1000 }, 'fast');
 });
