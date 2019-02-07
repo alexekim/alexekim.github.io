@@ -6,7 +6,11 @@ class Component extends React.Component{
   }
   render(){
     return(
-        // <p>look a container</p>
+        <div className="container">
+          <div className="row">
+            <div className="col s12"><h2 style="text-align: center;">Web Developer &amp; Cellist</h2></div>
+          </div>
+        </div>
     );
   }
 }
