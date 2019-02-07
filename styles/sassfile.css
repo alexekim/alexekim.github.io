@@ -28,6 +28,7 @@ h1 {
 .headerLink {
   font-size: 40px;
   margin-left: 10px;
+  float: right;
   color: #4a4a4a;
 }
 
