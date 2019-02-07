@@ -1,294 +1,81 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="description" content="Alex Kim web developer portfolio" charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Nunito:300,400' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<html lang="en" dir="ltr">
 
-    <link rel="stylesheet" href="styles/jquery.fullPage.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="styles/sassfile.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/skeleton.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="scripts/jquery.fullPage.js" type="text/javascript"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Kim</title>
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Nunito:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
+  <!-- grid -->
+  <link rel="stylesheet" href="styles/materialize.css">
+  <!-- custom scss -->
+  <link rel="stylesheet" href="styles/sassfile.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- vue -->
+  <script src="https://unpkg.com/vue"></script>
+  <!-- react -->
+  <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <style media="screen">
+    #headerSpan{font-size: 18px;}
+  </style>
+</head>
 
-    <title>Alex Kim</title>
-  </head>
-  <body>
-
-    <div id="fullpage">
-      <!-- FIRST PAGE HERE======================= -->
-      <div id="firstPage" class="section">
-
-        <div class="container">
-          <div class="row">
-            <div class="twelve columns">
-              <h1 id="name">ALEX KIM</h1>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="offset-by-three six columns">
-              <p class="foggyclarity" id="nav">
-                web developer, cellist, bike mechanic, friend
-              </p>
-            </div>
-          </div>
-
-          <div id="nav" class="row">
-            <div class="navlink twelve columns">
-              Welcome.
-            </div>
-            <div class="row">
-              <p>scroll down</p>
-              <div style="margin: 0 auto; position:absolute; bottom: -120px;" class="twelve columns">
-                <!-- <img id="firstPageDownArrow" src="images/arrow.png" alt="" /> -->
-              </div>
-            </div>
-            <!-- <div id="myMenu" class="four columns">
-              <a class="navlink" href="#secondPage">About</a>
-            </div>
-            <div class="four columns">
-              <a class="navlink" href="#thirdPage">Portfolio</a>
-            </div>
-            <div class="four columns">
-              <a  class="navlink" href="#fourthPage">Contact</a>
-            </div> -->
-          </div>
+<body>
+  <div id="bg"> <!--background image, see css --> </div>
+  <div id="app">
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div @mouseover="changeEmoji()" @mouseleave="restoreEmoji()" tabindex="0" class="col s8">
+          <h1 id="header">
+            {{ name }}
+            <!-- <span id="headerEmoji"> -->
+              <img id="headerEmoji" style="height: 30px;" :src="emojis[0].src" alt="" />
+              <span id="headerSpan">
+                <a v-html="vue" href="#"><!--{{ vue }}--></a>
+              </span>
+            <!-- </span> -->
+          </h1>
         </div>
-      </div>
-      <!-- SECOND PAGE HERE======================= -->
+        <div class="col s4">
+          <div class="headerLinksDiv">
+            <a
+              v-for="link in headerLinks"
+              :tabindex="link.id"
+              :key="link.id"
+              :href="link.href"
+              v-html="link.icon"
+              target="_blank"
+              class="headerLink"
+            >
+            <!-- dynamically filled -->
+            </a>
 
-      <div id="secondPage" class="section">
-        <div id="about" class="container">
+            <!-- <a tabindex="1" target="_blank" href="https://www.linkedin.com/in/alexekim/" class="headerLink">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a tabindex="2" target="_blank" href="https://github.com/alexekim" class="headerLink">
+              <i class="fab fa-github"></i>
+            </a>
+            <a tabindex="3" target="_blank" href="assets/Alex Kim Resume 2019.pdf" class="headerLink">
+              <i class="fas fa-file"></i>
+            </a> -->
 
-          <div class="row">
-            <div class="twelve columns">
-              <h1 class="head">About</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div id="profile" class="three columns">
-              <img id="mug" src="images/squarealex.png" alt="" />
-              <h4 id="mugtext">Alex Kim!</h4>
-            </div>
-
-            <div class="offset-by-one eight columns">
-              <p class="profiletext" >
-                I'm a web developer. I've immersed myself into a world of engineering, problem-solving, teamwork, and independent time management. Always wanting to build, I like to keep a number of projects going on that help me improve upon my skillset.
-                <!-- I'm a professional hobbyist. As a <span class="red">web-developer</span>, I have been coding 80+ hours per week in the full stack. Independently and in teams, I've engineered a few apps that are open for you to view on the next page. -->
-                <br><br>
-                When it's time to take a break from coding, I like to remind myself that <span class="red">I am human</span> with my other interests. I played as Principal <span class="red">Cellist</span> in the Illinois Wesleyan Civic Orchestra, went on tour with my band, and later went on to be a bike mechanic at a local shop. I now have about 6 <span class="red">bikes</span>. I like meeting fellow nerds that are also passionate about nerdy things.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- THIRD PAGE HERE======================= -->
-      <div id="thirdPage" class="section">
-        <h1 style="margin-bottom:-6%; padding: 1%;" class="head">Projects</h1>
-        <!-- WORK 1 ------------------>
-        <div class="slide">
-          <h1 id="work1">Lung Cancer Navigator</h1>
-          <div style="background-color: rgba(50, 50, 50, .25); padding: 2%" class="container">
-            <div class="row">
-              <div class="six columns">
-                <img class="projectimg" src="images/lcnav.png" alt="" />
-              </div>
-              <div style="background-color: rgba(50, 50, 50, .1); padding: 1%;" class="six columns">
-                <p style="font-family: 'Nunito', sans-serif; font-size: 18px; color: black;">
-                  The project heavily employed JavaScript driven elements and was a great exercise in CSS.
-                  <br>
-                  This was a user-interface centered project in which I was given mockups and wireframes to build exactly to specification. Constituents were given customized content based on their own interests, with a step-by-step guide based off of these interests.
-                </p>
-                <a class="projectlinks" href="http://www.lung.org/lung-health-and-diseases/lung-disease-lookup/lung-cancer/">See it</a>
-                <!-- <a class="projectlinks" style="position:absolute; right:5%;" href="https://github.com/alexekim/alexekim.github.io/tree/master/project1">Github</a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END WORK 1 -->
-
-
-        <!-- PROJECT 1 ------------------>
-        <div class="slide">
-          <h1 id="project4">melody</h1>
-          <div style="background-color: rgba(50, 50, 50, .25); padding: 2%" class="container">
-            <div class="row">
-              <div class="six columns">
-                <img class="projectimg" src="images/project4.png" alt="" />
-              </div>
-              <div style="background-color: rgba(50, 50, 50, .1); padding: 1%;" class="six columns">
-                <p style="font-family: 'Nunito', sans-serif; font-size: 18px; color: black;">This was my first independent full-stack application in which I used <strong>node.JS, Express.JS, MongoDB, Handlebars, and bCrypt</strong>, to name a few technologies.<br>Melody is a place for musicians to find each other. It allows its users to browse through an archive of musicians' profiles and save others as favorites for possible contact. <br/> No longer should you need to worry about finding other musicians in your area!
-                </p>
-                <a class="projectlinks" href="https://melody-app.herokuapp.com/">See it</a>
-                <a class="projectlinks" style="position:absolute; right:5%;" href="https://github.com/alexekim/alexekim.github.io/tree/master/project1">Github</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END SLIDE 1 -->
-        <!-- PROJECT 2 ------------------>
-        <div class="slide">
-          <h1 id="project2">caspian</h1>
-          <div style="background-color: rgba(50, 50, 50, .25); padding: 2%" class="container">
-            <div class="row">
-              <div class="six columns">
-                <img class="projectimg" src="images/project2.png" alt="" />
-              </div>
-              <div style="background-color: rgba(50, 50, 50, .1); padding: 1%;" class="six columns">
-                <p style="font-family: 'Nunito', sans-serif; font-size: 18px; color: black;">Written in <strong>Ruby with Sinatra &amp; ActiveRecord</strong>.<br>This can be classified as an Emergency Management app. It is meant to present important In-Case-of-Emergency (ICE) information. The app is meant to be used while camping, and contains the ability to hold information that is specific to the user's trip.
-                </p>
-                <a class="projectlinks" href="https://caspian-app.herokuapp.com/">See it</a>
-                <a class="projectlinks" style="position:absolute; right:5%;" href="https://github.com/alexekim/project_caspian">Github</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END SLIDE 2 -->
-        <!-- PROJECT 3 ----------->
-        <div class="slide">
-          <h1 id="project3">ChiStreetArt</h1>
-          <div style="background-color: rgba(50, 50, 50, .25); padding: 2%" class="container">
-            <div class="row">
-              <div class="six columns">
-                <img class="projectimg" src="images/project3.png" alt="" />
-              </div>
-              <div style="background-color: rgba(50, 50, 50, .1); padding: 1%;" class="six columns">
-                <p style="font-family: 'Nunito', sans-serif; font-size: 18px; color: black;">My contributions to this app were back-end elements. I practiced a great deal of <strong>Node.JS and Express.JS</strong>.<br>Just like any other world class city, Chicago offers an amazing array of art that can be seen in a museum or on a brick wall. A ride up and down the L will only expose you to a fraction of the Chicago street art on display throughout the city.
-                </p>
-                <a class="projectlinks" href="http://chistreetart.herokuapp.com/">See it</a>
-                <a class="projectlinks" style="position:absolute; right:5%;" href="https://github.com/Platypi-posse/client-app">Github</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END SLIDE 3 -->
-        <!-- PROJECT 4 ----------------->
-        <div class="slide">
-          <h1 id="project1">Ear Training</h1>
-          <div style="background-color: rgba(50, 50, 50, .25); padding: 2%" class="container">
-            <div class="row">
-              <div class="six columns">
-                <img class="projectimg" src="images/project1.png" alt="" />
-              </div>
-              <div style="background-color: rgba(50, 50, 50, .1); padding: 1%;" class="six columns">
-                <p style="font-family: 'Nunito', sans-serif; font-size: 18px; color: black;">Just like classical ear training, the game presents the player with a melody. The player must listen closely to the melody and decipher which notes were played. A keyboard, built with <strong>JavaScript & AudioAPI</strong>, is available as either a tool to the player using clicks or the homerow of the keyboard.
-                </p>
-                <a class="projectlinks" href="http://alexekim.github.io/project1/">See it</a>
-                <a class="projectlinks" style="position:absolute; right:5%;" href="https://github.com/alexekim/alexekim.github.io/tree/master/project1">Github</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- END SLIDE 4 -->
-
-        <!-- START TEST SLIDE 5 -->
-        <!-- <div id="project4big" class="slide">
-          <div class="container">
-            <div class="row">
-              <div class="offset-by-three six columns">
-                <p class="bigdesc">
-                  Melody is a place for musicians to find each other.
-                  <br><br>
-                  Musicians often enjoy being part of the music scene around them, but it can often be difficult to find other musicians when not playing regularly, or being away from school or the professional scene.<br><br>
-                  Melody allows its users to browse through an archive of musicians' profiles and save others as favorites for possible contact. No longer should you need to worry about finding other musicians in your area!
-                </p>
-              </div>
-            </div>
 
           </div>
-
-        </div> -->
-        <!-- END SLIDE 5 -->
-        <!-- START TEST SLIDE 6 -->
-        <!-- <div id="project2big" class="slide">
-          <div class="container">
-            <div class="row">
-              <div class="offset-by-three six columns">
-                <p class="bigdesc">HIHIHIHIIHIHI</p>
-
-              </div>
-            </div>
-
-          </div>
-        </div> -->
-        <!-- END SLIDE 6 -->
-        <!-- START TEST SLIDE 7 -->
-        <!-- <div id="project3big" class="slide">
-          <div class="container">
-            <div class="row">
-              <div class="offset-by-three six columns">
-                <p class="bigdesc">HIHIHIHIIHIHI</p>
-
-              </div>
-            </div>
-
-          </div>
-        </div> -->
-        <!-- END SLIDE 7 -->
-        <!-- START TEST SLIDE 8 -->
-        <!-- <div id="project4big" class="slide">
-          <div class="container">
-            <div class="row">
-              <div class="offset-by-three six columns">
-                <p class="bigdesc">HIHIHIHIIHIHI</p>
-
-              </div>
-            </div>
-
-          </div>
-        </div> -->
-        <!-- END SLIDE 8 -->
-
-
-
-
-
-
-
-
-      </div>
-      <!-- END THIRD PAGE -->
-      <!-- FOURTH PAGE START HERE======================= -->
-      <div id="fourthPage" class="section">
-      <div class="container">
-        <div class="row">
-          <div style="text-align:center;" class="twelve columns">
-            <h1 class="head">Contact</h1>
-            <p class="red">hey! let's work/play/perform/ride together.</p>
-            <a style="padding-left:1em;"class="navlink" href="mailto:alexander.e.kim@gmail.com?subject=Hey, Alex" "email me">email</a>
-            <a style="padding-left:1em;"class="navlink" href="https://www.linkedin.com/in/alexekim">linkedin</a>
-            <a style="padding-left:1em;"class="navlink" href="https://github.com/alexekim/">github</a>
-            <p style="font-size:12px;">all photos taken by Alex!</p>
-          </div>
-        </div>
-      </div>
-
-      </div>
-    </div>
-
-
-
-  </body>
-  <script src="scripts/app.js" type="text/javascript"></script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-79430885-1', 'auto');
-  ga('send', 'pageview');
+        </div> <!--col -->
+      </div> <!-- row -->
+    <!-- </div> -->  <!--container -->
+   </div> <!-- app -->
+</body>
+<script type="text/javascript" src="scripts/vueApp.js"></script>
+<script type="text/javascript" src="scripts/app.js">
 
 </script>
+
 </html>
