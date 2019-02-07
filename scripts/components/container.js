@@ -6,7 +6,7 @@ class Component extends React.Component{
   }
   render(){
     return(
-        <p>look a container</p>
+        // <p>look a container</p>
     );
   }
 }
