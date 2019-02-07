@@ -37,7 +37,7 @@
             <!-- <span id="headerEmoji"> -->
               <img id="headerEmoji" style="height: 30px;" :src="emojis[0].src" alt="" />
               <span id="headerSpan">
-                <a v-html="vue" href="#"><!--{{ vue }}--></a>
+                <a v-html="vue"><!--{{ vue }}--></a>
               </span>
             <!-- </span> -->
           </h1>
@@ -71,11 +71,15 @@
         </div> <!--col -->
       </div> <!-- row -->
     <!-- </div> -->  <!--container -->
-   </div> <!-- app -->
+  </div> <!-- app, END VUE CONTROL -->
+
+  <div id="root">
+
+  </div>
+
+
 </body>
 <script type="text/javascript" src="scripts/vueApp.js"></script>
-<script type="text/javascript" src="scripts/app.js">
-
-</script>
-
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/babel" src="scripts/components/container.js"></script>
 </html>
