@@ -1,81 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alex Kim</title>
-  <!-- fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Nunito:300,400' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
-  <!-- grid -->
-  <link rel="stylesheet" href="styles/materialize.css">
-  <!-- custom scss -->
-  <link rel="stylesheet" href="styles/sassfile.css">
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <!-- vue -->
-  <script src="https://unpkg.com/vue"></script>
-  <!-- react -->
-  <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-  <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
-  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
-  <style media="screen">
-    #headerSpan{font-size: 18px;}
-  </style>
-</head>
-
-<body>
-  <div id="bg"> <!--background image, see css --> </div>
-  <div id="app">
-    <!-- <div class="container"> -->
-      <div class="row">
-        <div @mouseover="changeEmoji()" @mouseleave="restoreEmoji()" tabindex="0" class="col s8">
-          <h1 id="header">
-            {{ name }}
-            <!-- <span id="headerEmoji"> -->
-              <img id="headerEmoji" style="height: 30px;" :src="emojis[0].src" alt="" />
-              <span id="headerSpan">
-                <a v-html="vue" href="#"><!--{{ vue }}--></a>
-              </span>
-            <!-- </span> -->
-          </h1>
-        </div>
-        <div class="col s4">
-          <div class="headerLinksDiv">
-            <a
-              v-for="link in headerLinks"
-              :tabindex="link.id"
-              :key="link.id"
-              :href="link.href"
-              v-html="link.icon"
-              target="_blank"
-              class="headerLink"
-            >
-            <!-- dynamically filled -->
-            </a>
-
-            <!-- <a tabindex="1" target="_blank" href="https://www.linkedin.com/in/alexekim/" class="headerLink">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a tabindex="2" target="_blank" href="https://github.com/alexekim" class="headerLink">
-              <i class="fab fa-github"></i>
-            </a>
-            <a tabindex="3" target="_blank" href="assets/Alex Kim Resume 2019.pdf" class="headerLink">
-              <i class="fas fa-file"></i>
-            </a> -->
-
-
-          </div>
-        </div> <!--col -->
-      </div> <!-- row -->
-    <!-- </div> -->  <!--container -->
-   </div> <!-- app -->
-</body>
-<script type="text/javascript" src="scripts/vueApp.js"></script>
-<script type="text/javascript" src="scripts/app.js">
-
-</script>
-
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    hi
+  </body>
 </html>
