@@ -1,3 +1,5 @@
+import Component from './Component.js';
+
 class Container extends React.Component{
   constructor(props) {
     super(props);
@@ -5,7 +7,7 @@ class Container extends React.Component{
   render(){
     return(
       <div>
-        <p>look a container</p>
+        <Component/>
       </div>
     )
   }
