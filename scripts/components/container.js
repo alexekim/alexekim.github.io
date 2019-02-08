@@ -17,7 +17,7 @@ class Profile extends React.Component{
       "I am a creative type that makes sure to enjoy what I do. I've found joy in engineering, being a cellist 🎻 (there's only a violin emoji), bike mechanic 🚲, and petting dogs 🐶.",
       "Currently the guy that does problem-solving, building all things web, and making things work at the American Lung Association. There, I've used a lot of JavaScript--including vanilla, jQuery, and React.",
       "This site was made for fun using React, ES6, Babel, Vue, jQuery, Sass, and of course HTML and CSS.",
-      "I also make applications using NodeJS using AWS and Digital Ocean.",
+      "I also make applications using NodeJS via AWS and Digital Ocean.",
       "At work, I use a ton of AJAX, promises async/await, and basic sorting functions."
     ];
     const blurbs = blurbsArray.map( (content, index) =>
