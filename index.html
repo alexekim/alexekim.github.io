@@ -53,7 +53,7 @@
         </div>
         <div class="col s4">
           <div class="headerLinksDiv">
-            <a v-for="link in headerLinks" :tabindex="link.id" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink">
+            <a v-for="link in headerLinks" :title="link.title" :tabindex="link.id" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink">
               <!-- dynamically filled -->
             </a>
 

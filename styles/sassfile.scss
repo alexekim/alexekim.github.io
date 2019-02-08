@@ -28,7 +28,9 @@ h1{
 }
 h2{
   font-family: 'Nunito', sans-serif;
-  text-align: center;
+}
+p{
+  font-family: 'Nunito', sans-serif;
 }
 
 .headerLinksDiv{
@@ -42,4 +44,12 @@ h2{
 }
 .headerLink:hover{
   color: rgb(38, 136, 101);
+}
+
+.center{
+  text-align: center;
+}
+
+#poweredByReact{
+  display: none;
 }
