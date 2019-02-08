@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-image: url(http://alexekim.github.io/images/plane.jpg);
+  background-image: url("http://alexekim.github.io/images/plane.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -25,8 +25,24 @@ h2 {
   font-family: "Nunito", sans-serif;
 }
 
+h3 {
+  font-family: "Nunito", sans-serif;
+  font-weight: normal;
+}
+
+h4 {
+  font-family: "Nunito", sans-serif;
+  font-weight: normal;
+}
+
+h5 {
+  font-family: "Nunito", sans-serif;
+  font-weight: normal;
+}
+
 p {
   font-family: "Nunito", sans-serif;
+  font-weight: normal;
 }
 
 .headerLinksDiv {
@@ -49,7 +65,13 @@ p {
 }
 
 #poweredByReact {
-  display: none;
+  visibility: hidden;
+}
+
+#description {
+  border: 1px solid gray;
+  background-color: rgba(2, 2, 2, 0.5);
+  color: white;
 }
 
 /*# sourceMappingURL=sassfile.css.map */

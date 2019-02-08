@@ -3,17 +3,19 @@
 //   // background-size: cover;
 //   // background-repeat: no-repeat;
 // }
-#content{
+
+#content {
   display: none;
 }
-#bg{
+
+#bg {
   z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   // background: url(http://alexekim.github.io/images/plane.jpg) no-repeat center center fixed;
-  background-image: url(http://alexekim.github.io/images/plane.jpg);
+  background-image: url("http://alexekim.github.io/images/plane.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -22,34 +24,60 @@
   min-height: 100%;
 }
 
-h1{
+h1 {
   font-family: 'Nunito', sans-serif;
   // font-size: 72px;
 }
-h2{
-  font-family: 'Nunito', sans-serif;
-}
-p{
+
+h2 {
   font-family: 'Nunito', sans-serif;
 }
 
-.headerLinksDiv{
+h3 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+}
+
+h4 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+}
+
+h5 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
+  font-weight: normal;
+}
+
+.headerLinksDiv {
   padding: 20px;
 }
-.headerLink{
+
+.headerLink {
   font-size: 40px;
   margin-left: 10px;
   float: right;
   color: rgb(74, 74, 74);
 }
-.headerLink:hover{
+
+.headerLink:hover {
   color: rgb(38, 136, 101);
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-#poweredByReact{
-  display: none;
+#poweredByReact {
+  visibility: hidden;
+}
+
+#description {
+  border: 1px solid gray;
+  background-color: rgba(2,2,2,0.5);
+  color: white;
 }
