@@ -33,6 +33,6 @@ var bg = $div.css('background-image');
       $img = $('<img>').attr('src', src).on('load', function() {
         // do something, maybe:
         // alert();
-        document.getElementById("app").style.display = "block";
+        document.getElementById("content").style.display = "block";
       });
   }
