@@ -70,11 +70,19 @@ p {
   color: #268865;
 }
 
+.headerLink:focus {
+  color: rgba(0, 44, 142, 0.91);
+}
+
 #menuIcon {
   font-size: 28px;
   float: right;
   margin: 20px;
   cursor: pointer;
+}
+
+#menuIcon:focus {
+  color: rgba(0, 44, 142, 0.91);
 }
 
 .center {
