@@ -5,6 +5,8 @@ class Profile extends React.Component{
     super(props);
     this.handleOnMouseOver = this.handleOnMouseOver.bind(this);
     this.handleOnMouseLeave = this.handleOnMouseLeave.bind(this);
+    this.handleOnFocus = this.handleOnFocus.bind(this);
+    this.handleOnBlur = this.handleOnBlur.bind(this);
   }
   handleOnMouseOver(){
     document.getElementById('poweredByReact').style.visibility = "visible";
@@ -12,6 +14,13 @@ class Profile extends React.Component{
   handleOnMouseLeave(){
     document.getElementById('poweredByReact').style.visibility = "hidden";
   }
+  handleOnFocus(){
+    document.getElementById('poweredByReact').style.visibility = "visible";
+  }
+  handleOnBlur(){
+    document.getElementById('poweredByReact').style.visibility = "hidden";
+  }
+
   render(){
     const blurbsArray = [
       "I am a creative type that makes sure to enjoy what I do. I've found joy in engineering, being a cellist 🎻 (there's only a violin emoji), bike mechanic 🚲, and petting dogs 🐶.",
@@ -28,7 +37,7 @@ class Profile extends React.Component{
       )
     );
     return(
-        <div onMouseOver={this.handleOnMouseOver} onMouseLeave={this.handleOnMouseLeave} className="container">
+        <div onFocus={this.handleOnFocus} onBlur={this.handleOnBlur} onMouseOver={this.handleOnMouseOver} onMouseLeave={this.handleOnMouseLeave} className="container">
           <div className="row">
             <div className="col s12 center">
             <h2 tabIndex="0">Alex Kim</h2>
