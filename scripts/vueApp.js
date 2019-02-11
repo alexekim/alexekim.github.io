@@ -34,7 +34,7 @@ var app = new Vue({
         id: 3,
         title: "Resume",
         href: "assets/Alex Kim Resume 2019.pdf",
-        icon: "<i class='fas fa-file'></i>"
+        icon: "<i class='fas fa-id-card'></i>"
       },
       {
         id: 4,
