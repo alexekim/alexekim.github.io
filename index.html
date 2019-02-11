@@ -54,22 +54,14 @@
           </h1>
         </div>
         <div class="col s4">
+          <div @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
           <div class="headerLinksDiv">
             <a v-for="link in headerLinks" :title="link.title" :tabindex="link.id" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink">
               <!-- dynamically filled -->
             </a>
-
             <!-- <a tabindex="1" target="_blank" href="https://www.linkedin.com/in/alexekim/" class="headerLink">
               <i class="fab fa-linkedin"></i>
-            </a>
-            <a tabindex="2" target="_blank" href="https://github.com/alexekim" class="headerLink">
-              <i class="fab fa-github"></i>
-            </a>
-            <a tabindex="3" target="_blank" href="assets/Alex Kim Resume 2019.pdf" class="headerLink">
-              <i class="fas fa-file"></i>
-            </a> -->
-
-
+            </a>-->
           </div>
         </div>
         <!--col -->

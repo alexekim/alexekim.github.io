@@ -14,6 +14,9 @@ var app = new Vue({
         src: "images/sunglasses.png"
       }
     ],
+    menuIcon: {
+      icon: "<i class='fas fa-bars'></i>"
+    },
     headerLinks: [
       {
         id: 1,
@@ -50,6 +53,13 @@ var app = new Vue({
     restoreEmoji: ()=>{
       document.getElementById("headerEmoji").src = app.emojis[0].src;
       app.vue = "";
+    },
+    changeMenuIcon: ()=>{
+      if (app.menuIcon.icon =="<i class='fas fa-bars'></i>") {
+        app.menuIcon.icon = "<i class='fas fa-times'></i>";
+      } else {
+        app.menuIcon.icon = "<i class='fas fa-bars'></i>";
+      }
     }
   }
 })
