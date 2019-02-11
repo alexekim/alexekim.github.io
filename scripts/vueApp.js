@@ -1,7 +1,7 @@
 var app = new Vue({
   el: "#app",
   data: {
-    name: "Alex Kim",
+    name: "",
     emojis: [
       {
         id: 1,

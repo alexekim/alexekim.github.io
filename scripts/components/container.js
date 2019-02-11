@@ -31,7 +31,8 @@ class Profile extends React.Component{
         <div onMouseOver={this.handleOnMouseOver} onMouseLeave={this.handleOnMouseLeave} className="container">
           <div className="row">
             <div className="col s12 center">
-            <h2>Web Developer</h2>
+            <h2>Alex Kim</h2>
+            <h3>Web Developer</h3>
             </div>
           </div>
           <p id="poweredByReact" className="center">
