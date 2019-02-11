@@ -37,7 +37,7 @@
     <div id="app">
       <!-- <div class="container"> -->
       <div class="row">
-        <div title="funny smiling emoji" @mouseover="changeEmoji()" @mouseleave="restoreEmoji()" tabindex="0" class="col s8">
+        <div title="funny smiling emoji" @mouseover="changeEmoji()" @mouseleave="restoreEmoji()" @focus="changeEmoji()" @blur="restoreEmoji()" tabindex="0" class="col s8">
           <h1 id="header">
             {{ name }}
             <!-- <span id="headerEmoji"> -->
