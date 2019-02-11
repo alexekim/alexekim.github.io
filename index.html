@@ -49,7 +49,7 @@
           </h1>
         </div>
         <div class="col s4">
-          <div tabindex="1" id="menuIcon" @keyup.enter="changeMenuIcon" @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
+          <div tabindex="0" id="menuIcon" @keyup.enter="changeMenuIcon" @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
           <div id="headerLinksDiv" class="headerLinksDiv">
             <!-- <a v-for="link in headerLinks" :title="link.title" :tabindex="link.id" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink"> -->
             <a v-for="link in headerLinks" :title="link.title" tabindex="0" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink">

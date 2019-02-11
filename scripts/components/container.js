@@ -23,7 +23,7 @@ class Profile extends React.Component{
     const blurbs = blurbsArray.map( (content, index) =>
       (
         <div key={index} className="blurb" id={"blurb"+index}>
-          <h3>{content}</h3>
+          <h3 tabIndex="0">{content}</h3>
         </div>
       )
     );
@@ -31,11 +31,11 @@ class Profile extends React.Component{
         <div onMouseOver={this.handleOnMouseOver} onMouseLeave={this.handleOnMouseLeave} className="container">
           <div className="row">
             <div className="col s12 center">
-            <h2>Alex Kim</h2>
-            <h3>Web Developer</h3>
+            <h2 tabIndex="0">Alex Kim</h2>
+            <h3 tabIndex="0">Web Developer</h3>
             </div>
           </div>
-          <p id="poweredByReact" className="center">
+          <p tabIndex="0" id="poweredByReact" className="center">
             made with <i class="fab fa-react"></i> React.js!
           </p>
           <div className="row" id="description">
