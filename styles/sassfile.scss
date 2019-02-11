@@ -1,8 +1,9 @@
-// body{
+body{
+  background: rgba(255,255,255,0.3);
 //   background: url("http://alexekim.github.io/images/plane.jpg") center no-repeat;
 //   // background-size: cover;
 //   // background-repeat: no-repeat;
-// }
+}
 
 #content {
   display: none;
@@ -26,11 +27,14 @@
 
 h1 {
   font-family: 'Nunito', sans-serif;
+  // font-family: 'Fjalla One', 'Nunito', sans-serif;
   // font-size: 72px;
 }
 
 h2 {
-  font-family: 'Nunito', sans-serif;
+  // font-family: 'Nunito', sans-serif;
+  font-family: 'Fjalla One', 'Nunito', sans-serif;
+  font-size: 46px;
 }
 
 h3 {
@@ -78,6 +82,8 @@ p {
 
 #description {
   // border: 1px solid gray;
-  background-color: rgba(255,255,255,0.3);
+  // border-radius: 40px;
+  background: rgba(255,255,255,0.3);
+  // box-shadow: inset 0px 0px 50px 50px rgba(102, 102, 102, 0.44);
   color: black;
 }
