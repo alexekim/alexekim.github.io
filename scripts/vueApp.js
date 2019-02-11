@@ -56,9 +56,13 @@ var app = new Vue({
     },
     changeMenuIcon: ()=>{
       if (app.menuIcon.icon =="<i class='fas fa-bars'></i>") {
+        //show it
         app.menuIcon.icon = "<i class='fas fa-times'></i>";
+        document.getElementById("headerLinksDiv").style.display = "block";
       } else {
+        //hide it
         app.menuIcon.icon = "<i class='fas fa-bars'></i>";
+        document.getElementById("headerLinksDiv").style.display = "none";
       }
     }
   }
