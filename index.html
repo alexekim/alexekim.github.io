@@ -54,7 +54,7 @@
           </h1>
         </div>
         <div class="col s4">
-          <div @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
+          <div id="menuIcon" @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
           <div class="headerLinksDiv">
             <a v-for="link in headerLinks" :title="link.title" :tabindex="link.id" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink">
               <!-- dynamically filled -->
@@ -72,9 +72,8 @@
     </div>
     <!-- app, END VUE CONTROL -->
 
-    <div id="root">
-
-    </div>
+    <!-- react -->
+    <div id="root"></div>
   </div>
 
 </body>
