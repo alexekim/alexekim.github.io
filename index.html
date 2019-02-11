@@ -37,7 +37,7 @@
     <div id="app">
       <!-- <div class="container"> -->
       <div class="row">
-        <div @mouseover="changeEmoji()" @mouseleave="restoreEmoji()" tabindex="0" class="col s8">
+        <div title="funny smiling emoji" @mouseover="changeEmoji()" @mouseleave="restoreEmoji()" tabindex="0" class="col s8">
           <h1 id="header">
             {{ name }}
             <!-- <span id="headerEmoji"> -->
@@ -49,7 +49,7 @@
           </h1>
         </div>
         <div class="col s4">
-          <div tabindex="0" id="menuIcon" @keyup.enter="changeMenuIcon" @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
+          <div tabindex="0" title="menu toggle" id="menuIcon" @keyup.enter="changeMenuIcon" @click="changeMenuIcon()" v-html="menuIcon.icon"></div>
           <div id="headerLinksDiv" class="headerLinksDiv">
             <!-- <a v-for="link in headerLinks" :title="link.title" :tabindex="link.id" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink"> -->
             <a v-for="link in headerLinks" :title="link.title" tabindex="0" :key="link.id" :href="link.href" v-html="link.icon" target="_blank" class="headerLink">
