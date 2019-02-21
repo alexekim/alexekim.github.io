@@ -27,7 +27,8 @@ class Profile extends React.Component{
       "Currently the guy that does problem-solving, building all things web, and making things work at the American Lung Association. There, I've used a lot of JavaScript--including vanilla, jQuery, and React.",
       "This site was made for fun using React, ES6, Babel, Vue, jQuery, Sass, and of course HTML and CSS.",
       "I also make applications using NodeJS via AWS and Digital Ocean.",
-      "At work, I use a ton of AJAX, promises async/await, and basic sorting functions."
+      "At work, I use a ton of AJAX, promises async/await, and basic sorting functions.",
+      "btw, this site is accessible! try navigating via tab & enter"
     ];
     const blurbs = blurbsArray.map( (content, index) =>
       (
