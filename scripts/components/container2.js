@@ -39,14 +39,16 @@ class Profile extends React.Component{
     return(
         <div onFocus={this.handleOnFocus} onBlur={this.handleOnBlur} onMouseOver={this.handleOnMouseOver} onMouseLeave={this.handleOnMouseLeave} className="container">
           <div className="row">
-            <div className="col s12 l4 center">
-              <h2 tabIndex="0">Alex Kim</h2>
-              <h3 tabIndex="0">Web Developer</h3>
-              <p tabIndex="0" id="poweredByReact" className="center">
-                made with <i class="fab fa-react"></i> React.js!
-              </p>
+            <div className="col s12 center">
+            <h2 tabIndex="0">Alex Kim</h2>
+            <h3 tabIndex="0">Web Developer</h3>
             </div>
-            <div className="col l8 center" id="description">
+          </div>
+          <p tabIndex="0" id="poweredByReact" className="center">
+            made with <i class="fab fa-react"></i> React.js!
+          </p>
+          <div className="row" id="description">
+            <div className="col s12 center">
               {blurbs}
             </div>
           </div>
