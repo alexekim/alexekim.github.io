@@ -43,6 +43,7 @@ class Profile extends React.Component{
             <div className="col s12 l4 center">
               <h2 tabIndex="0">Alex Kim</h2>
               <h3 tabIndex="0">Web Developer</h3>
+              <p><a href="http://alexekim.github.io/assets/Alex%20Kim%20Resume%202019.pdf" target="_blank">Resume</a></p>
               <p tabIndex="0" id="poweredByReact" className="center">
                 made with <i class="fab fa-react"></i> React.js!
               </p>
