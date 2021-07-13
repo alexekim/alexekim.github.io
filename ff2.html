@@ -82,10 +82,14 @@
 <script type="text/javascript">
   $(document).ready(function($){
   var frmapi = $('.frmapi-form');
-
-  console.log("Getting data now:");
-	frmapiGetData($(frmapi[frmi]));
-
+  if(frmapi.length){
+  	for(var frmi = 0, frmlen = frmapi.length; frmi < frmlen; frmi++){
+      console.log("Getting data now:");
+      console.log(frmapi);
+      console.log(frmi);
+  		frmapiGetData($(frmapi[frmi]));
+  	}
+  }
   });
   function frmapiGetData(frmcont){
   	$.ajax({
@@ -93,7 +97,7 @@
   		url:"https://j2k.74e.myftpupload.com/wp-json/frm/v2/forms/3?return=html",
   		success:function(json){
         console.log("====success=====");
-        console.log(json);
+        console.log(json.renderedHtml);
   			frmcont.html(json.renderedHtml);
   		},
       error: function(e){
