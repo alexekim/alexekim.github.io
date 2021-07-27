@@ -41,7 +41,7 @@ var app = new Vue({
       //   title: "Resume",
       //   href: "assets/Alex Kim Resume 2019.pdf",
       //   icon: "<i class='fas fa-id-card'></i>"
-      // },
+      // }, 
     ],
     vue: ""
   },
