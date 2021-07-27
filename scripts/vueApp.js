@@ -32,16 +32,16 @@ var app = new Vue({
       },
       {
         id: 3,
-        title: "Resume",
-        href: "assets/Alex Kim Resume 2019.pdf",
-        icon: "<i class='fas fa-id-card'></i>"
-      },
-      {
-        id: 4,
         title: "e-mail",
         href: "mailto:alexander.e.kim@gmail.com",
         icon: "<i class='fas fa-envelope-square'></i>"
       }
+      // {
+      //   id: 4,
+      //   title: "Resume",
+      //   href: "assets/Alex Kim Resume 2019.pdf",
+      //   icon: "<i class='fas fa-id-card'></i>"
+      // },
     ],
     vue: ""
   },
