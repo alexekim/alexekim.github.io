@@ -34,31 +34,96 @@
 </head>
 
 <body>
-  <div id="bg">
-    <!--background image, see css -->
-  </div>
+  <!--background image, see css -->
+  <!-- <div id="bg"></div> -->
   <div id="content">
     <div class="header">
 
     </div>
-    <!-- react -->
-    <div id="root"></div>
-
     <!-- non-react content -->
     <div id="main" class="">
+      <!-- intro content and links -->
       <div class="row">
         <div class="col l3 center">
           <h1>alex kim</h1>
           <p>Web Developer</p>
-          <div id="headerLinksDiv" class="headerLinksDiv" style="display: block;"><a title="LinkedIn" tabindex="0" href="https://www.linkedin.com/in/alexekim/" target="_blank" class="headerLink"><i class="fab fa-linkedin"></i></a><a title="Github" tabindex="0" href="https://github.com/alexekim" target="_blank" class="headerLink"><i class="fab fa-github"></i></a><a title="e-mail" tabindex="0" href="mailto:alexander.e.kim@gmail.com" target="_blank" class="headerLink"><i class="fas fa-envelope-square"></i></a></div>
+          <div id="headerLinksDiv" class="headerLinksDiv" style="display: block;">
+            <a title="LinkedIn" tabindex="0" href="https://www.linkedin.com/in/alexekim/" target="_blank" class="headerLink linkedin">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a title="Github" tabindex="0" href="https://github.com/alexekim" target="_blank" class="headerLink github">
+              <i class="fab fa-github"></i>
+            </a>
+            <a title="e-mail" tabindex="0" href="mailto:alexander.e.kim@gmail.com" target="_blank" class="headerLink email">
+              <i class="fas fa-envelope-square"></i>
+            </a>
+          </div>
+          <a href="http://alexekim.github.io/assets/Alex%20Kim%20Resume%202019.pdf" target="_blank">resume</a>
         </div>
-        <div class="col l9">
-          <div class="imgBorder">
-            <img class="imgBorder" src="../images/alex_kr_ride_selfie_3.png" alt="">
+        <div id="bioContainer" class="col l9">
+          <div class="imgSplashContainer">
+            <img class="imgBorder" src="../images/alex_kr_ride_selfie_3.png" alt="image of Alex Kim taking a selfie via a traffic mirror taking a break from a bike ride in Korea">
+          </div>
+
+          <!-- react -->
+          <div id="root"></div>
+
+          <!-- bio -->
+          <div id="bioContent" class="bioContent">
+            <div class="section1">
+              <div class="row">
+                <p>
+                  I am a creative type that makes sure to enjoy what I do. I've found joy in engineering, cello 🎻 (there's only a violin emoji), bikes 🚲, and petting dogs 🐶.
+                </p>
+                <!-- <p>
+                  Currently the guy that does problem-solving, building all things web, and making things work at the American Lung Association. <br>There, I've used a lot of JavaScript--including vanilla, jQuery, and React.
+                </p> -->
+                <p>
+                  Currently a web developer at the American Lung Association, taking on tasks such as building new features, creating interactive content, data visualization, and managing &lt;forms&gt;, just to name a few.
+                </p>
+                <p>
+                  At work, I use a ton of AJAX, promises async/await, and basic sorting functions.
+                </p>
+                <ul>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>VueJS</li>
+                  <li>NodeJS</li>
+                  <li>.NET</li>
+                  <li>C#</li>
+                  <li>CSS</li>
+                  <li>Sass, Less</li>
+                  <li>Kentico CMS</li>
+                  <li>Luminate CMS</li>
+                </ul>
+                <p>
+
+                </p>
+                <!-- <p>
+                  This site was made for fun using React, ES6, Babel, Vue, jQuery, Sass, and of course HTML and CSS.
+                </p> -->
+                <p>
+                  I also make applications using NodeJS via AWS and Digital Ocean.
+                </p>
+
+              </div>
+            </div>
+            <div class="section2">
+              <div class="row">
+
+              </div>
+              <div class="section3">
+                <div class="row">
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- end intro content and links -->
     </div>
+    <!-- end main -->
   </div>
 
 </body>
