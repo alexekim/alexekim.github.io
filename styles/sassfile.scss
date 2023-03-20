@@ -1,0 +1,73 @@
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Almarai';
+}
+h1 {
+  font-size: 48px;
+  letter-spacing: normal;
+}
+p{
+  font-family: 'Almarai';
+  color: #202020;
+}
+a{
+  transition: color 1s;
+}
+a:hover{
+  color: rgb(38, 136, 101);
+  text-shadow: 1px 1px #6b6b6b;
+}
+.center{
+  text-align: center;
+}
+
+.header{
+  height: 50px;
+}
+
+#headerSpan {
+  font-size: 14px;
+}
+
+.headerLinksDiv {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.headerLink {
+  font-size: 40px;
+  margin-left: 10px;
+  color: rgb(74, 74, 74);
+  text-decoration: none;
+}
+
+.linkedin{
+  color: #0072b1;
+}
+.github {
+  color: #575859;
+}
+.email{
+  color: #DB4437;
+}
+.headerLink:hover {
+  color: rgb(38, 136, 101);
+}
+.headerLink:focus {
+  color: rgba(0, 44, 142, 0.91);
+}
+
+#bioContainer{
+  padding: 0 20px 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.imgBorder {
+  border: 10px black;
+  border-radius: 30px 0 30px 0;
+  max-width: 800px;
+  // margin: 0 20px 0 20px;
+}
+#bioContent{
+  font-family: 'Almarai', sans-serif;
+}

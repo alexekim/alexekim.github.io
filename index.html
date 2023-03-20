@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="description" content="Alex Kim, Web Developer" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alex Kim</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Almarai&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:300,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/css/emojione.min.css">
+  <!-- grid -->
+  <!-- <link rel="stylesheet" href="styles/materialize.css"> -->
+  <link rel="stylesheet" href="styles/boostrapGrid.css">
+  <!-- custom scss -->
+  <link rel="stylesheet" href="styles/sassfile.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- vue -->
+  <script src="https://unpkg.com/vue@2.6.5/dist/vue.min.js"></script>
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <!-- require -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.js"></script> -->
+  <!-- react -->
+  <!-- <script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script> -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <!--background image, see css -->
+  <!-- <div id="bg"></div> -->
+  <div id="content">
+    <div class="header">
+
+    </div>
+    <!-- non-react content -->
+    <div id="main" class="">
+      <!-- intro content and links -->
+      <div class="row">
+        <div class="col-lg-3 center">
+          <h1>alex kim</h1>
+          <p>Web Developer</p>
+          <div id="headerLinksDiv" class="headerLinksDiv" style="display: block;">
+            <a title="LinkedIn" tabindex="0" href="https://www.linkedin.com/in/alexekim/" target="_blank" class="headerLink linkedin">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a title="Github" tabindex="0" href="https://github.com/alexekim" target="_blank" class="headerLink github">
+              <i class="fab fa-github"></i>
+            </a>
+            <a title="e-mail" tabindex="0" href="mailto:alexander.e.kim@gmail.com" target="_blank" class="headerLink email">
+              <i class="fas fa-envelope-square"></i>
+            </a>
+          </div>
+          <a href="http://alexekim.github.io/assets/Alex%20Kim%20Resume%202019.pdf" target="_blank">resume</a>
+        </div>
+        <div id="bioContainer" class="col-lg-9">
+          <div class="imgSplashContainer">
+            <img class="imgBorder" src="images/alex_kr_ride_selfie_3.png" alt="image of Alex Kim taking a selfie via a traffic mirror taking a break from a bike ride in Korea">
+          </div>
+
+          <!-- react -->
+          <div id="root"></div>
+
+          <!-- bio -->
+          <div id="bioContent" class="bioContent">
+            <div class="section1">
+              <div class="row">
+                <div class="col-lg-12">
+                  <p>
+                    I am a creative type that makes sure to enjoy what I do. I've found joy in engineering, cello 🎻 (there's only a violin emoji), bikes 🚲, and petting dogs 🐶.
+                  </p>
+                  <!-- <p>
+                    Currently the guy that does problem-solving, building all things web, and making things work at the American Lung Association. <br>There, I've used a lot of JavaScript--including vanilla, jQuery, and React.
+                  </p> -->
+                  <p>
+                    Currently a web developer at the American Lung Association, I take on tasks such as building new features, creating interactive content, data visualization, and managing &lt;forms&gt;, just to name a few.
+                  </p>
+                  <p>
+                    At work, I use a ton of AJAX, promises async/await, and basic sorting functions.
+                  </p>
+                  <ul>
+                    <li>Javascript</li>
+                    <li>React</li>
+                    <li>VueJS</li>
+                    <li>NodeJS</li>
+                    <li>ASP.NET Core MVC</li>
+                    <li>C#</li>
+                    <li>CSS</li>
+                    <li>Sass, Less</li>
+                    <li>Swiftype Elastic Search (crawler & API)</li>
+                    <li>Kentico CMS</li>
+                    <li>Luminate CMS</li>
+                  </ul>
+                  <p>
+
+                  </p>
+                  <!-- <p>
+                    This site was made for fun using React, ES6, Babel, Vue, jQuery, Sass, and of course HTML and CSS.
+                  </p> -->
+                  <p>
+                    I also make applications using NodeJS via AWS and Digital Ocean.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="section2">
+              <div class="row">
+
+              </div>
+              <div class="section3">
+                <div class="row">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end intro content and links -->
+    </div>
+    <!-- end main -->
+  </div>
+
+</body>
+<script type="text/javascript" src="scripts/vueApp.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/babel" src="scripts/container.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</html>
