@@ -1,0 +1,84 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style media="screen">
+  h1{
+    font-family:
+  }
+  .idContainer{
+    width: 100%;
+  }
+  .idInfo{
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #csuLogo{
+    width: 100px;
+    margin: 50px;
+  }
+  #studentId{
+    width: 90%;
+    margin: 25px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  .appleWallet{
+    width: 80px;
+  }
+  #safeInfo{
+    display: none;
+  }
+  .inputs{
+    margin: 10px;
+    padding: 5px;
+    width: 250px;
+  }
+  #submit{
+    background: darkgreen;
+    color: white;
+    font-size: 16px;
+    width: 100px;
+  }
+</style>
+
+<div class="idContainer">
+  <div class="idInfo">
+    <!-- <h1>Cleveland State University</h1> -->
+    <a href="https://www.csuohio.edu/">
+      <img id="csuLogo" src="csuLogoCircle.png" alt="">
+    </a>
+    <br>
+    <div class="login">
+      <h5>Student ID Access</h5>
+      <div class="">
+        <input id="email" class="inputs" type="email" name="" value="sdhebar@csu.edu" placeholder="student@csu.edu">
+        <br>
+        <input id="password" class="inputs" type="text" name="" value="******">
+        <br>
+        <button id="submit" class="inputs" type="submit" name="" value="Submit">Submit</button>
+      </div>
+    </div>
+    <div id="safeInfo">
+      <div class="idDiv">
+        <img id="studentId" src="csu_samir.png" alt="">
+        <p>Tap and hold to save image.</p>
+      </div>
+      <div class="">
+        <a href="#">
+          <img class="appleWallet" src="applewallet.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  document.querySelector("#submit").addEventListener("click", ()=>{
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
+    if(password == "password"){
+      document.querySelector(".login").style.display = "none";
+      document.querySelector("#safeInfo").style.display = "block";
+    }
+  });
+</script>
